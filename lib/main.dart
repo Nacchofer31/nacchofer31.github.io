@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:nacchofer31_portfolio/base/controller.dart';
+import 'package:nacchofer31_portfolio/controllers/theme_controller.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  runApp(const MyApp());
+  runApp(MyApp(controllers: [
+    ThemeController(),
+  ]));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.controllers});
 
-  // This widget is the root of your application.
+  final List<Controller> controllers;
+
+  ThemeController get themeController {
+    return controllers.firstWhere((controller) => controller is ThemeController)
+        as ThemeController;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

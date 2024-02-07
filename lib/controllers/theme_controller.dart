@@ -1,6 +1,6 @@
-import 'package:nacchofer31_portfolio/base/interface_controller.dart';
+import 'package:nacchofer31_portfolio/base/controller.dart';
 
-class ThemeController extends InterfaceController<ThemeController> {
+class ThemeController extends Controller<ThemeController> {
   bool isDarkMode = true;
 
   @override

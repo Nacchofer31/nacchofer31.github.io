@@ -1,6 +1,6 @@
 import 'dart:async';
 
-abstract class InterfaceController<T extends InterfaceController<T>> {
+abstract class Controller<T extends Controller<T>> {
   final StreamController<T> _state = StreamController.broadcast();
   Stream<T> get state => _state.stream;
 

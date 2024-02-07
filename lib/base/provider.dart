@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nacchofer31_portfolio/base/interface_controller.dart';
+import 'package:nacchofer31_portfolio/base/controller.dart';
 
 class Provider extends InheritedWidget {
   const Provider({
@@ -8,9 +8,9 @@ class Provider extends InheritedWidget {
     required super.child,
   }) : super(key: key);
 
-  final List<InterfaceController> controllers;
+  final List<Controller> controllers;
 
-  static T of<T extends InterfaceController<T>>(BuildContext context) {
+  static T of<T extends Controller<T>>(BuildContext context) {
     try {
       final root = context.dependOnInheritedWidgetOfExactType<Provider>()!;
       return root.controllers.firstWhere((element) => element is T) as T;
