@@ -24,4 +24,7 @@ flutter:
 
   uses-material-design: true
 
-# assets:
+  assets:
+    - assets/raw/
+    - assets/images/
+    - assets/images/portfolio/

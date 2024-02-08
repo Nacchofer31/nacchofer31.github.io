@@ -1,0 +1,56 @@
+{
+    "clients": [
+        {
+            "clientName": "Universidad Internacional de La Rioja (UNIR)",
+            "icon": "unir.jpg",
+            "date": "2021 - Sep 2022",
+            "location": "La Rioja (Remote)",
+            "description": "Máster's degree Software Development & IT Operations (DevOps)",
+            "tasks": [
+                {
+                    "name" : "foo",
+                    "description": "foo"
+                }
+            ]
+        },
+        {
+            "clientName": "Universitat Politècnica de València (UPV)",
+            "icon":"upv.jpg",
+            "date": "2016 - 2020",
+            "location": "La Rioja (Remote)",
+            "description": "Engineer's degree Computer Engineering",
+            "tasks": [
+                {
+                    "name" : "foo",
+                    "description": "foo"
+                }
+            ]
+        },
+        {
+            "clientName": "Oulu University of Applied Sciences (OAMK)",
+            "icon":"oamk.jpg",
+            "date": "2020",
+            "location": "Oulu (Finland)",
+            "description": "Web Development | Mobile Applications - Erasmus + Program",
+            "tasks": [
+                {
+                    "name" : "foo",
+                    "description": "foo"
+                }
+            ]
+        },
+        {
+            "clientName": "Florida Universitària",
+            "icon":"florida.jpg",
+            "date": "2014 - 2016",
+            "location": "Catarroja (Valencia)",
+            "description": "Higher Technician in Multi-platform Application Development",
+            "tasks": [
+                {
+                    "name" : "foo",
+                    "description": "foo"
+                }
+            ]
+        }
+    ]
+}
