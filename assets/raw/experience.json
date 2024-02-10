@@ -1,54 +1,49 @@
 {
     "clients": [
         {
-            "clientName": "Universidad Internacional de La Rioja (UNIR)",
-            "icon": "unir.jpg",
-            "date": "2021 - Sep 2022",
-            "location": "La Rioja (Remote)",
-            "description": "Máster's degree Software Development & IT Operations (DevOps)",
+            "clientName": "Sopra Steria",
+            "icon": "https://media.licdn.com/dms/image/D4E0BAQF_0JqR2CRpJw/company-logo_100_100/0/1688571543420/soprasteria_logo?e=1715817600&v=beta&t=1PyjuPX3GVsHoqIlcpW1CIXnVhG0e5XefqY7HCJXwtk",
+            "date": "May 2022 - Present",
+            "location": "Valencia (Spain) | Hybrid",
+            "description": "Senior Mobile Engineer",
             "tasks": [
                 {
-                    "name" : "foo",
+                    "name" : "Senior Flutter Engineer",
                     "description": "foo"
+                },
+                {
+                    "name" : "Senior Android Engineer",
+                    "description": "Being part of a large multicultural team, in charge of re-skinning a modularized banking app using a low-code proprietary remote app configuration, making the app fully customizable and modifiable directly from a back-office.\n\n» Android (kotlin) ~ Working with: MVVM, Jetpack, Koin, Koin-test, Retrofit2, AndroidX, LiveData, Firebase, Room, Glide, Mockito, Robolectric"
                 }
             ]
         },
         {
-            "clientName": "Universitat Politècnica de València (UPV)",
-            "icon":"upv.jpg",
-            "date": "2016 - 2020",
-            "location": "La Rioja (Remote)",
-            "description": "Engineer's degree Computer Engineering",
+            "clientName": "Cuatroochenta",
+            "icon":"https://media.licdn.com/dms/image/D4D0BAQHgKzfbQW8qAA/company-logo_100_100/0/1682517638309/cuatroochenta_com_logo?e=1715817600&v=beta&t=5citOpO-bDocImSYAW7FL6b2HUoh4HtPEV1BTkz4GMU",
+            "date": "May 2020 - May 2022",
+            "location": "Valencia (Spain) | Hybrid",
+            "description": "Mobile Engineer",
             "tasks": [
                 {
-                    "name" : "foo",
-                    "description": "foo"
+                    "name" : "Flutter Engineer",
+                    "description": "» Flutter ~ Worked with: Clean Architecture, BLoC, GetIt, Dartz, RxDart, Equatable, TDD, Mockito"
+                },
+                {
+                    "name" : "Android Engineer",
+                    "description": "» Android (kotlin) ~ Worked with: Jetpack, MVVM, Coroutines, LiveData, AndroidX, Retrofit, Room"
                 }
             ]
         },
         {
-            "clientName": "Oulu University of Applied Sciences (OAMK)",
-            "icon":"oamk.jpg",
-            "date": "2020",
-            "location": "Oulu (Finland)",
-            "description": "Web Development | Mobile Applications - Erasmus + Program",
+            "clientName": "Sportmaniacs",
+            "icon":"https://media.licdn.com/dms/image/C560BAQHYgTx1qSIKIA/company-logo_100_100/0/1631321009969?e=1715817600&v=beta&t=t1Sh1oScAnAB22nVm-I--h63vHBcgabhpqMYykFH_0w",
+            "date": "Jan 2016 - Sep 2016",
+            "location": "Valencia (Spain) | On-site",
+            "description": "Android Engineer",
             "tasks": [
                 {
-                    "name" : "foo",
-                    "description": "foo"
-                }
-            ]
-        },
-        {
-            "clientName": "Florida Universitària",
-            "icon":"florida.jpg",
-            "date": "2014 - 2016",
-            "location": "Catarroja (Valencia)",
-            "description": "Higher Technician in Multi-platform Application Development",
-            "tasks": [
-                {
-                    "name" : "foo",
-                    "description": "foo"
+                    "name" : "Android Engineer",
+                    "description": "» Android (java) ~ Worked with: Model View Presenter, ButterKnife, Retrofit, RxJava, Mockito, Expresso, UnitTesting"
                 }
             ]
         }

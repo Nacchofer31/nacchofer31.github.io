@@ -2,28 +2,28 @@
     "college": [
         {
             "collegeName": "Universidad Internacional de La Rioja (UNIR)",
-            "icon": "unir.jpg",
+            "icon": "https://media.licdn.com/dms/image/D4D0BAQHvju_jk1wDbg/company-logo_100_100/0/1685608386860/unir_universidad_internet_logo?e=1715817600&v=beta&t=wWYhcvZOl-22HoMYtBXiSLnsuZTbibxNCMaBPU4TCfQ",
             "date": "2021 - Sep 2022",
             "location": "La Rioja (Remote)",
             "description": "Máster's degree Software Development & IT Operations (DevOps)"
         },
         {
             "collegeName": "Universitat Politècnica de València (UPV)",
-            "icon":"upv.jpg",
+            "icon":"https://media.licdn.com/dms/image/C4D0BAQFi7R3IyJyZhw/company-logo_100_100/0/1632842290836/upv_logo?e=1715817600&v=beta&t=JQcPJKjN4hxWe6RyVyMrsQYpCnLO1ULWI0o4jrjJMoU",
             "date": "2016 - 2020",
             "location": "La Rioja (Remote)",
             "description": "Engineer's degree Computer Engineering"
         },
         {
             "collegeName": "Oulu University of Applied Sciences (OAMK)",
-            "icon":"oamk.jpg",
+            "icon":"https://media.licdn.com/dms/image/C4D0BAQFNBrd37MU69w/company-logo_100_100/0/1659938901415/oulu_university_of_applied_sciences_logo?e=1715817600&v=beta&t=M1_SJ6eY-IO2iAqJzRoYJm1QU5gaELCFrf05wKWGV2s",
             "date": "2020",
             "location": "Oulu (Finland)",
             "description": "Web Development | Mobile Applications - Erasmus+ Program"
         },
         {
             "collegeName": "Florida Universitària",
-            "icon":"florida.jpg",
+            "icon":"https://media.licdn.com/dms/image/D560BAQGoL5rJkK9Tqg/company-logo_100_100/0/1706112836564/florida_universitaria_logo?e=1715817600&v=beta&t=wTZmbzRIvaen-yKkrnAEBb9cc90Q6cjhEkfL4KpRdXg",
             "date": "2014 - 2016",
             "location": "Catarroja (Valencia)",
             "description": "Higher Technician in Multi-platform Application Development"

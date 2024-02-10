@@ -88,23 +88,6 @@ class ProfileCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                isExtremelySmall ? SizedBox() : Spacer(),
-                Responsive.isVerySmall(context)
-                    ? SizedBox()
-                    : AnimatedContainer(
-                        duration: Duration(milliseconds: 350),
-                        width: Responsive.maxSquareSize(context) * 0.65,
-                        height: Responsive.maxSquareSize(context) * 0.65,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: Image.network(
-                              profile.techUrl,
-                              width: Responsive.maxSquareSize(context) * 0.65,
-                              height: Responsive.maxSquareSize(context) * 0.65,
-                            ).image,
-                          ),
-                        ),
-                      ),
               ],
             ),
           );

@@ -36,12 +36,12 @@ class MyApp extends StatelessWidget {
         stream: themeController.state,
         builder: (context, snapshot) {
           final isDarkMode = themeController.isDarkMode;
-          final primary = isDarkMode ? Colors.pinkAccent : Colors.pink;
+          const primary = Colors.blue;
           final cardColor = isDarkMode ? Color(0xff1E1E1F) : Colors.white;
           return MaterialApp(
             title: 'Ignacio Ferrer',
             theme: ThemeData(
-              primarySwatch: Colors.pink,
+              primarySwatch: Colors.blue,
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
               iconTheme: IconThemeData(
                 color: primary,
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
             ),
             debugShowCheckedModeBanner: false,
             scrollBehavior: CustomScrollBehavior(),
-            routes: routes,
+            onGenerateRoute: generateRoute,
             initialRoute: "/about",
             onUnknownRoute: (_) => MaterialPageRoute(
                 builder: (_) => HomePage(child: NotFoundRoute())),
@@ -92,8 +92,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
-int getRouteIndex(String name) {
-  return routes.keys.toList().indexWhere((x) => x == name);
 }

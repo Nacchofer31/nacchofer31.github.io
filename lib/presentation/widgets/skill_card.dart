@@ -76,12 +76,12 @@ class _SkillItem extends StatelessWidget {
               children: [
                 Text(
                   skillData.name,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
                 SizedBox(height: Responsive.maxSmallSpacing(context) / 2),
                 Text(
                   skillData.description,
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),

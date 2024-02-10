@@ -13,8 +13,7 @@ Color cardBorderColor(BuildContext context) {
 }
 
 Color accentColor(BuildContext context) {
-  final isDarkMode = Provider.of<ThemeController>(context).isDarkMode;
-  return isDarkMode ? Colors.pinkAccent : Colors.pink;
+  return  Color(0xff23395d);
 }
 
 Color bodyTextColor(BuildContext context) {

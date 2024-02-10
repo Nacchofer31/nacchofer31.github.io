@@ -3,6 +3,8 @@ import 'package:nacchofer31_portfolio/base/provider.dart';
 import 'package:nacchofer31_portfolio/controllers/data_controller.dart';
 import 'package:nacchofer31_portfolio/controllers/theme_controller.dart';
 import 'package:nacchofer31_portfolio/presentation/pages/about_page.dart';
+import 'package:nacchofer31_portfolio/presentation/pages/education_page.dart';
+import 'package:nacchofer31_portfolio/presentation/pages/experience_page.dart';
 import 'package:nacchofer31_portfolio/presentation/pages/not_found_page.dart';
 import 'package:nacchofer31_portfolio/presentation/theme/theme.dart';
 import 'package:nacchofer31_portfolio/utils/responsive_screen.dart';
@@ -54,7 +56,7 @@ class _HomePageState extends State<HomePage>
               Center(
                 child: Container(
                   padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                  width: Responsive.maxContainerWidth(context, 800),
+                  width: Responsive.maxContainerWidth(context, 1400),
                   height: double.infinity,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -121,8 +123,8 @@ class _HomePageState extends State<HomePage>
                               children: [
                                 AboutPage(),
                                 NotFoundRoute(),
-                                NotFoundRoute(),
-                                NotFoundRoute(),
+                                ExperiencePage(),
+                                EducationPage(),
                               ],
                             ),
                       ),
