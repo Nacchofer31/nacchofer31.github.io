@@ -1,24 +1,29 @@
 {
     "skills": [
         {
+            "name": "Android",
+            "description": "Kotlin, Jetpack, Compose, LiveData, Koin, RxJava, Flows, Room, Retrofit2, Koin-test, Mockito",
+            "techLogoPath": "assets/images/android.png"
+        },
+        {
             "name": "Flutter",
-            "description": "Mobile and Web development",
-            "techLogoPath": "assets/images/flutter_small.png"
+            "description": "Dart, Clean Architecture, BLoC, Cubit, Freezed, GetIt, RxDart, Provider, Mockito, Dio, Melos",
+            "techLogoPath": "assets/images/flutter.png"
         },
         {
-            "name": "Firebase",
-            "description": "Authentication, Firestore, Cloud Functions, etc ...",
-            "techLogoPath": "assets/images/firebase.png"
-        },
-        {
-            "name": "NodeJS",
-            "description": "NestJS Backend Framework.",
-            "techLogoPath": "assets/images/nodejs.png"
-        },
-        {
-            "name": "CI/CD",
-            "description": "Builds and Release automation",
+            "name": "DevOps Tools",
+            "description": "Ansible, Docker, AWS, Kubernetes, Chef, Puppet, Terraform, Jenkins, GitLab CI/CD, GitHub Actions",
             "techLogoPath": "assets/images/github_actions.png"
+        },
+        {
+            "name": "Software Development",
+            "description": "Clean Code, Design Patterns, GIT, CLI, Agile Methodology, SCRUM, Pair-programming, DevOps Lifecycles",
+            "techLogoPath": "assets/images/code.png"
+        },
+        {
+            "name": "Languages",
+            "description": "Native: Spanish, Valencian | Full-Professional: English",
+            "techLogoPath": "assets/images/language.png"
         }
     ]
 }
