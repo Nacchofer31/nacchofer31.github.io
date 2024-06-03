@@ -2,14 +2,14 @@
     "clients": [
         {
             "clientName": "Sopra Steria",
-            "icon": "https://media.licdn.com/dms/image/D4E0BAQF_0JqR2CRpJw/company-logo_100_100/0/1688571543420/soprasteria_logo?e=1715817600&v=beta&t=1PyjuPX3GVsHoqIlcpW1CIXnVhG0e5XefqY7HCJXwtk",
+            "icon": "assets/images/experience/soprasteria.jpeg",
             "date": "May 2022 - Present",
             "location": "Valencia (Spain) | Hybrid",
             "description": "Senior Mobile Engineer",
             "tasks": [
                 {
                     "name" : "Senior Flutter Engineer",
-                    "description": "foo"
+                    "description": "Creating a clean-architecture modularized health insurance hybrid application from scratch, developed and maintained using Flutter, consistently prioritizing comprehensive code coverage through unitary and widget tests.\n\n» Flutter (dart) ~ Working with: Clean Architecture, Melos, Cubit, BLoC, freezed, Mocktail, Dio, Widget Test, Firebase, Hive, Equatable"
                 },
                 {
                     "name" : "Senior Android Engineer",
@@ -19,7 +19,7 @@
         },
         {
             "clientName": "Cuatroochenta",
-            "icon":"https://media.licdn.com/dms/image/D4D0BAQHgKzfbQW8qAA/company-logo_100_100/0/1682517638309/cuatroochenta_com_logo?e=1715817600&v=beta&t=5citOpO-bDocImSYAW7FL6b2HUoh4HtPEV1BTkz4GMU",
+            "icon":"assets/images/experience/cuatroochenta.jpeg",
             "date": "May 2020 - May 2022",
             "location": "Valencia (Spain) | Hybrid",
             "description": "Mobile Engineer",
@@ -36,7 +36,7 @@
         },
         {
             "clientName": "Sportmaniacs",
-            "icon":"https://media.licdn.com/dms/image/C560BAQHYgTx1qSIKIA/company-logo_100_100/0/1631321009969?e=1715817600&v=beta&t=t1Sh1oScAnAB22nVm-I--h63vHBcgabhpqMYykFH_0w",
+            "icon":"assets/images/experience/sportmaniacs.jpeg",
             "date": "Jan 2016 - Sep 2016",
             "location": "Valencia (Spain) | On-site",
             "description": "Android Engineer",

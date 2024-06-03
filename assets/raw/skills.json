@@ -3,27 +3,27 @@
         {
             "name": "Android",
             "description": "Kotlin, Jetpack, Compose, LiveData, Koin, RxJava, Flows, Room, Retrofit2, Koin-test, Mockito",
-            "techLogoPath": "assets/images/android.png"
+            "techLogoPath": "assets/images/skills/android.png"
         },
         {
             "name": "Flutter",
             "description": "Dart, Clean Architecture, BLoC, Cubit, Freezed, GetIt, RxDart, Provider, Mockito, Dio, Melos",
-            "techLogoPath": "assets/images/flutter.png"
+            "techLogoPath": "assets/images/skills/flutter.png"
         },
         {
             "name": "DevOps Tools",
             "description": "Ansible, Docker, AWS, Kubernetes, Chef, Puppet, Terraform, Jenkins, GitLab CI/CD, GitHub Actions",
-            "techLogoPath": "assets/images/github_actions.png"
+            "techLogoPath": "assets/images/skills/github_actions.png"
         },
         {
             "name": "Software Development",
             "description": "Clean Code, Design Patterns, GIT, CLI, Agile Methodology, SCRUM, Pair-programming, DevOps Lifecycles",
-            "techLogoPath": "assets/images/code.png"
+            "techLogoPath": "assets/images/skills/code.png"
         },
         {
             "name": "Languages",
             "description": "Native: Spanish, Valencian | Full-Professional: English",
-            "techLogoPath": "assets/images/language.png"
+            "techLogoPath": "assets/images/skills/language.png"
         }
     ]
 }

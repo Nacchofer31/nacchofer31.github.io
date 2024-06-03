@@ -19,7 +19,9 @@ class EducationItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
-              crossAxisAlignment: isVerySmall ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+              crossAxisAlignment: isVerySmall
+                  ? CrossAxisAlignment.center
+                  : CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -28,7 +30,7 @@ class EducationItem extends StatelessWidget {
                   height: 56,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
+                    child: Image.asset(
                       educationData.icon,
                       width: 56,
                       height: 56,

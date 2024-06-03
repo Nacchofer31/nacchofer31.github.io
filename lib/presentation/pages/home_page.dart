@@ -5,7 +5,6 @@ import 'package:nacchofer31_portfolio/controllers/theme_controller.dart';
 import 'package:nacchofer31_portfolio/presentation/pages/about_page.dart';
 import 'package:nacchofer31_portfolio/presentation/pages/education_page.dart';
 import 'package:nacchofer31_portfolio/presentation/pages/experience_page.dart';
-import 'package:nacchofer31_portfolio/presentation/pages/not_found_page.dart';
 import 'package:nacchofer31_portfolio/presentation/theme/theme.dart';
 import 'package:nacchofer31_portfolio/utils/responsive_screen.dart';
 
@@ -28,7 +27,7 @@ class _HomePageState extends State<HomePage>
   late TabController tabController;
 
   int get routeIndex {
-    return widget.index.clamp(0, 3);
+    return widget.index.clamp(0, 2);
   }
 
   int selectedMenu = 0;
@@ -37,7 +36,7 @@ class _HomePageState extends State<HomePage>
   void didChangeDependencies() {
     super.didChangeDependencies();
     tabController =
-        TabController(length: 4, vsync: this, initialIndex: routeIndex);
+        TabController(length: 3, vsync: this, initialIndex: routeIndex);
 
     Provider.of<DataController>(context).loadAllData();
   }
@@ -76,18 +75,9 @@ class _HomePageState extends State<HomePage>
                                 physics: BouncingScrollPhysics(),
                                 indicatorColor: accentColor(context),
                                 tabs: [
-                                  Tab(
-                                    text: "About",
-                                  ),
-                                  Tab(
-                                    text: "Portfolio",
-                                  ),
-                                  Tab(
-                                    text: "Experience",
-                                  ),
-                                  Tab(
-                                    text: "Education",
-                                  ),
+                                  Tab(text: "About"),
+                                  Tab(text: "Experience"),
+                                  Tab(text: "Education"),
                                 ],
                                 onTap: (index) {
                                   switch (index) {
@@ -96,13 +86,9 @@ class _HomePageState extends State<HomePage>
                                       break;
                                     case 1:
                                       Navigator.pushNamed(
-                                          context, "/portfolio");
-                                      break;
-                                    case 2:
-                                      Navigator.pushNamed(
                                           context, "/experience");
                                       break;
-                                    case 3:
+                                    case 2:
                                       Navigator.pushNamed(
                                           context, "/education");
                                       break;
@@ -122,7 +108,6 @@ class _HomePageState extends State<HomePage>
                               controller: tabController,
                               children: [
                                 AboutPage(),
-                                NotFoundRoute(),
                                 ExperiencePage(),
                                 EducationPage(),
                               ],

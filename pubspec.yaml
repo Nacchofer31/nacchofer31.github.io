@@ -27,4 +27,6 @@ flutter:
   assets:
     - assets/raw/
     - assets/images/
-    - assets/images/portfolio/
+    - assets/images/skills/
+    - assets/images/education/
+    - assets/images/experience/

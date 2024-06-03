@@ -11,12 +11,12 @@ class NotFoundRoute extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "That page doesn't exist.",
+            "WIP",
             style: Responsive.mainHeadline(context),
           ),
           SizedBox(height: 24),
           Text(
-            "ERROR 404",
+            "This page is in development process.",
             style: Theme.of(context).textTheme.caption,
           ),
         ],
