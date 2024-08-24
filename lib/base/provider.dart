@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:nacchofer31_portfolio/base/controller.dart';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class Provider extends InheritedWidget {
   const Provider({
-    Key? key,
+    super.key,
     required this.controllers,
     required super.child,
-  }) : super(key: key);
+  });
 
   final List<Controller> controllers;
 

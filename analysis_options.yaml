@@ -1,9 +1,18 @@
+
 include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
-    prefer_const_constructors: false
-    prefer_const_literals_to_create_immutables: false
-    file_names: false
-    depend_on_referenced_packages: false
-    library_private_types_in_public_api: false
+    prefer_single_quotes: true
+    always_use_package_imports: true
+    directives_ordering: true
+    always_declare_return_types: true
+    avoid_shadowing_type_parameters: true
+    unnecessary_this: true
+
+analyzer:
+  exclude: 
+    - '**/*.freezed.dart'
+    - '**/*.g.dart'
+  errors:
+    invalid_annotation_target: ignore

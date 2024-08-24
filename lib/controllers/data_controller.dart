@@ -1,6 +1,4 @@
-import 'package:nacchofer31_portfolio/base/controller.dart';
-import 'package:nacchofer31_portfolio/data/content_datasource.dart';
-import 'package:nacchofer31_portfolio/data/model/model.dart';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class DataController extends Controller<DataController> {
   DataController(this.dataSource);
@@ -31,12 +29,12 @@ class DataController extends Controller<DataController> {
   }
 
   Future<void> loadAllData() async {
-    final profileData = await dataSource.getData("assets/raw/profile.json");
-    final aboutData = await dataSource.getData("assets/raw/about.json");
+    final profileData = await dataSource.getData('assets/raw/profile.json');
+    final aboutData = await dataSource.getData('assets/raw/about.json');
     final experienceData =
-        await dataSource.getData("assets/raw/experience.json");
-    final skillsData = await dataSource.getData("assets/raw/skills.json");
-    final educationData = await dataSource.getData("assets/raw/education.json");
+        await dataSource.getData('assets/raw/experience.json');
+    final skillsData = await dataSource.getData('assets/raw/skills.json');
+    final educationData = await dataSource.getData('assets/raw/education.json');
 
     setState(
       profileModel: ProfileModel.fromJson(profileData),
