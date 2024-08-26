@@ -27,13 +27,17 @@ class ExperienceModel {
       };
 
   factory ExperienceModel.fromJson(Map<String, dynamic> map) => ExperienceModel(
-      clientName: map['clientName'],
-      icon: map['icon'],
-      date: map['date'],
-      location: map['location'],
-      description: map['description'],
-      tasks: List<TaskModel>.from(
-          map['tasks']?.map((e) => TaskModel.fromJson(e))));
+        clientName: map['clientName'],
+        icon: map['icon'],
+        date: map['date'],
+        location: map['location'],
+        description: map['description'],
+        tasks: List<TaskModel>.from(
+          map['tasks']?.map(
+            (e) => TaskModel.fromJson(e),
+          ),
+        ),
+      );
 
   String toRawJson() => json.encode(toJson());
 
@@ -45,7 +49,10 @@ class TaskModel {
   final String name;
   final String description;
 
-  TaskModel({required this.name, required this.description});
+  TaskModel({
+    required this.name,
+    required this.description,
+  });
 
   Map<String, dynamic> toJson() => {
         'name': name,

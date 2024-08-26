@@ -28,8 +28,11 @@ class SkillsCard extends StatelessWidget {
                 const AccentWidget(),
                 SizedBox(height: Responsive.maxSmallSpacing(context)),
                 Column(
-                  children:
-                      skills.map((e) => _SkillItem(skillData: e)).toList(),
+                  children: skills
+                      .map((e) => _SkillItem(
+                            skillData: e,
+                          ))
+                      .toList(),
                 ),
               ],
             ),
@@ -41,7 +44,9 @@ class SkillsCard extends StatelessWidget {
 }
 
 class _SkillItem extends StatelessWidget {
-  const _SkillItem({required this.skillData});
+  const _SkillItem({
+    required this.skillData,
+  });
 
   final SkillModel skillData;
 

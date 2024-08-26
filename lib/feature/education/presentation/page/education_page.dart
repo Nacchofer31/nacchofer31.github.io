@@ -47,8 +47,10 @@ class EducationPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: experiences
-                          .map((EducationModel e) =>
-                              EducationItem(educationData: e))
+                          .map(
+                            (EducationModel e) =>
+                                EducationItem(educationData: e),
+                          )
                           .toList(),
                     ),
                   ),

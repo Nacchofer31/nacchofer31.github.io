@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 class AboutModel {
-  final String description;
-
   AboutModel({this.description = ''});
+
+  final String description;
 
   Map<String, dynamic> toJson() => {'description': description};
 
@@ -12,6 +12,9 @@ class AboutModel {
 
   String toRawJson() => json.encode(toJson());
 
-  factory AboutModel.fromRawJson(String source) =>
-      AboutModel.fromJson(json.decode(source));
+  factory AboutModel.fromRawJson(String source) => AboutModel.fromJson(
+        json.decode(
+          source,
+        ),
+      );
 }

@@ -42,56 +42,52 @@ class _HomePageState extends State<HomePage>
     final themeController = Provider.of<ThemeController>(context);
     return StreamBuilder(
       stream: themeController.state,
-      builder: (context, snapshot) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              Center(
-                child: Container(
-                  padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                  width: Responsive.maxContainerWidth(context, 1400),
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      TopNavigationBar(tabController: tabController),
-                      const SizedBox(height: 24),
-                      Expanded(
-                        child: widget.child ??
-                            TabBarView(
-                              controller: tabController,
-                              children: const [
-                                AboutPage(),
-                                ExperiencePage(),
-                                EducationPage(),
-                              ],
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
+      builder: (context, snapshot) => Scaffold(
+        body: Stack(
+          children: [
+            Center(
+              child: Container(
                 padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    onPressed: () {
-                      themeController.toogle();
-                    },
-                    icon: Icon(
-                      themeController.isDarkMode
-                          ? Icons.dark_mode
-                          : Icons.light_mode,
+                width: Responsive.maxContainerWidth(context, 1400),
+                height: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    TopNavigationBar(tabController: tabController),
+                    const SizedBox(height: 24),
+                    Expanded(
+                      child: widget.child ??
+                          TabBarView(
+                            controller: tabController,
+                            children: const [
+                              AboutPage(),
+                              ExperiencePage(),
+                              EducationPage(),
+                            ],
+                          ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  onPressed: () => themeController.toogle(),
+                  icon: Icon(
+                    themeController.isDarkMode
+                        ? Icons.dark_mode
+                        : Icons.light_mode,
                   ),
                 ),
               ),
-            ],
-          ),
-        );
-      },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

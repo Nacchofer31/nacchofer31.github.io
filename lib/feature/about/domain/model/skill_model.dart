@@ -1,15 +1,15 @@
 import 'dart:convert';
 
 class SkillModel {
-  final String name;
-  final String description;
-  final String techLogoPath;
-
   SkillModel({
     required this.name,
     required this.description,
     required this.techLogoPath,
   });
+
+  final String name;
+  final String description;
+  final String techLogoPath;
 
   Map<String, dynamic> toJson() {
     return {
@@ -29,6 +29,9 @@ class SkillModel {
 
   String toRawJson() => json.encode(toJson());
 
-  factory SkillModel.fromRawJson(String source) =>
-      SkillModel.fromJson(json.decode(source));
+  factory SkillModel.fromRawJson(String source) => SkillModel.fromJson(
+        json.decode(
+          source,
+        ),
+      );
 }
