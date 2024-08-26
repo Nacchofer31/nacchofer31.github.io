@@ -33,6 +33,7 @@ class EducationModel {
 
   String toRawJson() => json.encode(toJson());
 
-  factory EducationModel.fromRawJson(String raw) =>
-      EducationModel.fromJson(json.decode(raw));
+  factory EducationModel.fromRawJson(String raw) => EducationModel.fromJson(
+        json.decode(raw),
+      );
 }

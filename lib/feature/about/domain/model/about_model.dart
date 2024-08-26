@@ -1,20 +1,10 @@
-import 'dart:convert';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
-class AboutModel {
-  AboutModel({this.description = ''});
+part 'about_model.freezed.dart';
 
-  final String description;
-
-  Map<String, dynamic> toJson() => {'description': description};
-
-  factory AboutModel.fromJson(Map<String, dynamic> map) =>
-      AboutModel(description: map['description'] ?? '');
-
-  String toRawJson() => json.encode(toJson());
-
-  factory AboutModel.fromRawJson(String source) => AboutModel.fromJson(
-        json.decode(
-          source,
-        ),
-      );
+@freezed
+class AboutModel with _$AboutModel {
+  factory AboutModel({
+    @Default('') String description,
+  }) = _AboutModel;
 }

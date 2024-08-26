@@ -1,5 +1,7 @@
 library portfolio;
 
+export 'package:freezed_annotation/freezed_annotation.dart';
+
 export 'app.dart';
 export 'base/base.dart';
 export 'controllers/controllers.dart';

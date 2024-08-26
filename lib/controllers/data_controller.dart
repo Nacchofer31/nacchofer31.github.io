@@ -1,7 +1,9 @@
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class DataController extends Controller<DataController> {
-  DataController(this.dataSource);
+  DataController(
+    this.dataSource,
+  );
 
   final ContentDataSource dataSource;
 
@@ -38,7 +40,7 @@ class DataController extends Controller<DataController> {
 
     setState(
       profileModel: ProfileModel.fromJson(profileData),
-      aboutModel: AboutModel.fromJson(aboutData),
+      aboutModel: AboutModel(description: aboutData['description']),
       experienceList: (experienceData['clients'] as List)
           .map((e) => ExperienceModel.fromJson(e))
           .toList(),
