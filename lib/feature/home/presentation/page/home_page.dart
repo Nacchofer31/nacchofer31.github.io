@@ -33,8 +33,6 @@ class _HomePageState extends State<HomePage>
       vsync: this,
       initialIndex: routeIndex,
     );
-
-    Provider.of<DataController>(context).loadAllData();
   }
 
   @override

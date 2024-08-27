@@ -9,7 +9,6 @@ void main() {
     MyApp(
       controllers: [
         ThemeController(),
-        DataController(ContentDataSource()),
       ],
     ),
   );
