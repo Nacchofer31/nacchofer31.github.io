@@ -6,38 +6,34 @@ class SkillsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dataController = Provider.of<DataController>(context);
+    final skills = context.select<HomeCubit, List<SkillModel>>(
+      (cubit) => cubit.state.homeModel.skillList,
+    );
     return Card(
-      child: StreamBuilder(
-        stream: dataController.state,
-        builder: (context, snapshot) {
-          final skills = dataController.skillList;
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 350),
-            width: double.infinity,
-            padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Skills',
-                  style: Responsive.mainHeadline(context),
-                ),
-                SizedBox(height: Responsive.maxSmallSpacing(context)),
-                const AccentWidget(),
-                SizedBox(height: Responsive.maxSmallSpacing(context)),
-                Column(
-                  children: skills
-                      .map((e) => _SkillItem(
-                            skillData: e,
-                          ))
-                      .toList(),
-                ),
-              ],
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 350),
+        width: double.infinity,
+        padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Skills',
+              style: Responsive.mainHeadline(context),
             ),
-          );
-        },
+            SizedBox(height: Responsive.maxSmallSpacing(context)),
+            const AccentWidget(),
+            SizedBox(height: Responsive.maxSmallSpacing(context)),
+            Column(
+              children: skills
+                  .map((e) => _SkillItem(
+                        skillData: e,
+                      ))
+                  .toList(),
+            ),
+          ],
+        ),
       ),
     );
   }

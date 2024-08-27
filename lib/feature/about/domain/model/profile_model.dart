@@ -1,31 +1,12 @@
-import 'dart:convert';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
-class ProfileModel {
-  ProfileModel({
-    this.fullName = '',
-    this.role = '',
-    this.avatarPath = '',
-  });
+part 'profile_model.freezed.dart';
 
-  final String fullName;
-  final String role;
-  final String avatarPath;
-
-  Map<String, dynamic> toJson() => {
-        'fullName': fullName,
-        'role': role,
-        'avatarPath': avatarPath,
-      };
-
-  factory ProfileModel.fromJson(Map<String, dynamic> map) => ProfileModel(
-        fullName: map['fullName'] ?? '',
-        role: map['role'],
-        avatarPath: map['avatarPath'],
-      );
-
-  String toRawJson() => json.encode(toJson());
-
-  factory ProfileModel.fromRawJson(String raw) => ProfileModel.fromJson(
-        json.decode(raw),
-      );
+@freezed
+class ProfileModel with _$ProfileModel {
+  factory ProfileModel({
+    @Default('') String fullName,
+    @Default('') String role,
+    @Default('') String avatarPath,
+  }) = _ProfileModel;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,52 +41,56 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final themeController = Provider.of<ThemeController>(context);
-    return StreamBuilder(
-      stream: themeController.state,
-      builder: (context, snapshot) => Scaffold(
-        body: Stack(
-          children: [
-            Center(
-              child: Container(
-                padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                width: Responsive.maxContainerWidth(context, 1400),
-                height: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    TopNavigationBar(tabController: tabController),
-                    const SizedBox(height: 24),
-                    Expanded(
-                      child: widget.child ??
-                          TabBarView(
-                            controller: tabController,
-                            children: const [
-                              AboutPage(),
-                              ExperiencePage(),
-                              EducationPage(),
-                            ],
-                          ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  onPressed: () => themeController.toogle(),
-                  icon: Icon(
-                    themeController.isDarkMode
-                        ? Icons.dark_mode
-                        : Icons.light_mode,
+    final getIt = GetIt.instance;
+    return BlocProvider<HomeCubit>(
+      create: (context) => getIt.get<HomeCubit>(),
+      child: StreamBuilder(
+        stream: themeController.state,
+        builder: (context, snapshot) => Scaffold(
+          body: Stack(
+            children: [
+              Center(
+                child: Container(
+                  padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+                  width: Responsive.maxContainerWidth(context, 1400),
+                  height: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      TopNavigationBar(tabController: tabController),
+                      const SizedBox(height: 24),
+                      Expanded(
+                        child: widget.child ??
+                            TabBarView(
+                              controller: tabController,
+                              children: const [
+                                AboutPage(),
+                                ExperiencePage(),
+                                EducationPage(),
+                              ],
+                            ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    onPressed: () => themeController.toogle(),
+                    icon: Icon(
+                      themeController.isDarkMode
+                          ? Icons.dark_mode
+                          : Icons.light_mode,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

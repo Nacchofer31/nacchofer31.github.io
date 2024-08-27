@@ -1,13 +1,26 @@
-import 'dart:convert';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
-class EducationModel {
+part 'education_model.freezed.dart';
+
+@freezed
+class EducationModel with _$EducationModel {
+  factory EducationModel({
+    @Default('') String collegeName,
+    @Default('') String icon,
+    @Default('') String date,
+    @Default('') String location,
+    @Default('') String description,
+  }) = _EducationModel;
+}
+
+class EducationModeld {
   final String collegeName;
   final String icon;
   final String date;
   final String location;
   final String description;
 
-  EducationModel({
+  EducationModeld({
     this.collegeName = '',
     this.icon = '',
     this.date = '',
@@ -15,25 +28,11 @@ class EducationModel {
     this.description = '',
   });
 
-  Map<String, dynamic> toJson() => {
-        'collegeName': collegeName,
-        'icon': icon,
-        'date': date,
-        'location': location,
-        'description': description,
-      };
-
-  factory EducationModel.fromJson(Map<String, dynamic> map) => EducationModel(
+  factory EducationModeld.fromJson(Map<String, dynamic> map) => EducationModeld(
         collegeName: map['collegeName'],
         icon: map['icon'],
         date: map['date'],
         location: map['location'],
         description: map['description'],
-      );
-
-  String toRawJson() => json.encode(toJson());
-
-  factory EducationModel.fromRawJson(String raw) => EducationModel.fromJson(
-        json.decode(raw),
       );
 }

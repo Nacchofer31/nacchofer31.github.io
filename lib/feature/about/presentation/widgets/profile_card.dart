@@ -6,89 +6,80 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dataController = Provider.of<DataController>(context);
+    final profileModel = context.select<HomeCubit, ProfileModel>(
+      (cubit) => cubit.state.homeModel.profileModel,
+    );
     final isExtremelySmall = Responsive.isExtremelySmall(context);
-    return Card(
-      child: StreamBuilder(
-        stream: dataController.state,
-        builder: (context, snapshot) {
-          final profile = dataController.profileModel;
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 350),
-            padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
-            child: Row(
-              mainAxisAlignment: isExtremelySmall
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                isExtremelySmall
-                    ? const SizedBox.shrink()
-                    : AnimatedContainer(
-                        duration: const Duration(milliseconds: 350),
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 350),
+      padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
+      child: Row(
+        mainAxisAlignment: isExtremelySmall
+            ? MainAxisAlignment.center
+            : MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          isExtremelySmall
+              ? const SizedBox.shrink()
+              : AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  width: Responsive.maxSquareSize(context),
+                  height: Responsive.maxSquareSize(context),
+                  decoration: BoxDecoration(
+                    color: cardBackground(context),
+                    borderRadius: BorderRadius.circular(24),
+                    image: DecorationImage(
+                      image: Image.asset(
+                        profileModel.avatarPath,
                         width: Responsive.maxSquareSize(context),
                         height: Responsive.maxSquareSize(context),
-                        decoration: BoxDecoration(
-                          color: cardBackground(context),
-                          borderRadius: BorderRadius.circular(24),
-                          image: DecorationImage(
-                            image: Image.asset(
-                              profile.avatarPath,
-                              width: Responsive.maxSquareSize(context),
-                              height: Responsive.maxSquareSize(context),
-                            ).image,
-                          ),
-                        ),
-                      ),
-                SizedBox(
-                    width: isExtremelySmall
-                        ? 0
-                        : Responsive.maxMainSpacing(context)),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      profile.fullName,
-                      style: Responsive.mainHeadline(context),
+                      ).image,
                     ),
-                    SizedBox(height: Responsive.maxSmallSpacing(context)),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          profile.role,
-                          style:
-                              Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    height: 1.8,
-                                    color: bodyTextColor(context),
-                                  ),
+                  ),
+                ),
+          SizedBox(
+              width: isExtremelySmall ? 0 : Responsive.maxMainSpacing(context)),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                profileModel.fullName,
+                style: Responsive.mainHeadline(context),
+              ),
+              SizedBox(height: Responsive.maxSmallSpacing(context)),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    profileModel.role,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          height: 1.8,
+                          color: bodyTextColor(context),
                         ),
-                        const SizedBox(width: 8),
-                        !Responsive.isVerySmall(context)
-                            ? const SizedBox.shrink()
-                            : AnimatedContainer(
-                                duration: const Duration(milliseconds: 350),
+                  ),
+                  const SizedBox(width: 8),
+                  !Responsive.isVerySmall(context)
+                      ? const SizedBox.shrink()
+                      : AnimatedContainer(
+                          duration: const Duration(milliseconds: 350),
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: Image.network(
+                                profileModel.avatarPath,
                                 width: 24,
                                 height: 24,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: Image.network(
-                                      profile.avatarPath,
-                                      width: 24,
-                                      height: 24,
-                                    ).image,
-                                  ),
-                                ),
-                              ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
+                              ).image,
+                            ),
+                          ),
+                        ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

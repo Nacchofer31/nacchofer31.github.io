@@ -1,37 +1,12 @@
-import 'dart:convert';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 
-class SkillModel {
-  SkillModel({
-    required this.name,
-    required this.description,
-    required this.techLogoPath,
-  });
+part 'skill_model.freezed.dart';
 
-  final String name;
-  final String description;
-  final String techLogoPath;
-
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'description': description,
-      'techLogoPath': techLogoPath,
-    };
-  }
-
-  factory SkillModel.fromJson(Map<String, dynamic> map) {
-    return SkillModel(
-      name: map['name'] ?? '',
-      description: map['description'] ?? '',
-      techLogoPath: map['techLogoPath'] ?? '',
-    );
-  }
-
-  String toRawJson() => json.encode(toJson());
-
-  factory SkillModel.fromRawJson(String source) => SkillModel.fromJson(
-        json.decode(
-          source,
-        ),
-      );
+@freezed
+class SkillModel with _$SkillModel {
+  factory SkillModel({
+    @Default('') String name,
+    @Default('') String description,
+    @Default('') String techLogoPath,
+  }) = _SkillModel;
 }

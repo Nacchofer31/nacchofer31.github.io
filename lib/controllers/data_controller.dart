@@ -31,25 +31,16 @@ class DataController extends Controller<DataController> {
   }
 
   Future<void> loadAllData() async {
-    final profileData = await dataSource.getData('assets/raw/profile.json');
-    final aboutData = await dataSource.getData('assets/raw/about.json');
-    final experienceData =
-        await dataSource.getData('assets/raw/experience.json');
-    final skillsData = await dataSource.getData('assets/raw/skills.json');
-    final educationData = await dataSource.getData('assets/raw/education.json');
-
     setState(
-      profileModel: ProfileModel.fromJson(profileData),
-      aboutModel: AboutModel(description: aboutData['description']),
-      experienceList: (experienceData['clients'] as List)
-          .map((e) => ExperienceModel.fromJson(e))
-          .toList(),
-      educationList: (educationData['college'] as List)
-          .map((e) => EducationModel.fromJson(e))
-          .toList(),
-      skillList: (skillsData['skills'] as List)
-          .map((e) => SkillModel.fromJson(e))
-          .toList(),
+      profileModel:
+          await AboutRepositoryImpl(dataSource: dataSource).getProfileModel(),
+      aboutModel:
+          await AboutRepositoryImpl(dataSource: dataSource).getAboutModel(),
+      experienceList: await ExperienceRepositoryImpl(dataSource: dataSource)
+          .getExperienceList(),
+      educationList: await EducationRepositoryImpl(dataSource: dataSource)
+          .getEducationList(),
+      skillList: await AboutRepositoryImpl(dataSource: dataSource).getSkills(),
     );
   }
 }
