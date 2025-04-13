@@ -15,6 +15,9 @@ final class DependencyInjector {
     getIt.registerFactory<EducationRepository>(
       () => EducationRepositoryImpl(dataSource: dataSource),
     );
+    getIt.registerFactory<ProjectsRepository>(
+      () => ProjectsRepositoryImpl(dataSource: dataSource),
+    );
 
     //CUBITS
     getIt.registerFactory<HomeCubit>(
@@ -23,6 +26,7 @@ final class DependencyInjector {
           aboutRepository: getIt.get<AboutRepository>(),
           experienceRepository: getIt.get<ExperienceRepository>(),
           educationRepository: getIt.get<EducationRepository>(),
+          projectsRepository: getIt.get<ProjectsRepository>(),
         ),
       ),
     );

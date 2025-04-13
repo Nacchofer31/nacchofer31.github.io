@@ -1,0 +1,126 @@
+{
+    "projects": [
+        {
+            "name": "Bh GymLoop - BH Fitness",
+            "logo": "assets/images/projects/gymloop/logo.webp",
+            "type": "Company - Hiberus",
+            "description" : "Led the migration of a Xamarin fitness app with RFID and Bluetooth integration to Flutter, ensuring clean code, solid architecture, and best practices",
+            "skills": "Flutter, Dart, Clean Architecture, Melos, Cubit, BLoC, freezed, Dio, BlueMan, Sqflite, OneSignal, flutter_localizations",
+            "techLogoPath": "assets/images/skills/flutter.png",
+            "screenshots": [
+                "assets/images/projects/gymloop/screenshot1.jpg",
+                "assets/images/projects/gymloop/screenshot2.jpg",
+                "assets/images/projects/gymloop/screenshot3.jpg",
+                "assets/images/projects/gymloop/screenshot4.jpg"
+            ],
+            "webLink": "https://www.wedothebest.es/"
+        },
+        {
+            "name": "IMQ - IGUALATORIO MEDICO QUIRURGICO, S.A.",
+            "logo": "assets/images/projects/imq/logo.webp",
+            "type": "Company - Sopra Steria",
+            "description" : "Contributed to the development of a clean-architecture, modularized modularized health insurance hybrid application from scratch, developed and maintained using Flutter, consistently prioritizing comprehensive code coverage through unitary and widget tests.",
+            "skills": "Flutter, Dart, Clean Architecture, Melos, Cubit, BLoC, freezed, Mocktail, Dio, Widget Test, Firebase, Hive, Equatable, flutter_localizations",
+            "techLogoPath": "assets/images/skills/flutter.png",
+            "screenshots": [
+                "assets/images/projects/imq/screenshot1.png",
+                "assets/images/projects/imq/screenshot2.png",
+                "assets/images/projects/imq/screenshot3.png",
+                "assets/images/projects/imq/screenshot4.png"
+            ],
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.info33_android&hl=en",
+            "appStoreLink": "https://apps.apple.com/es/app/imq/id589602440"
+        },
+        {
+            "name": "DBS - Sopra Banking Software",
+            "logo": "assets/images/projects/dsbank/logo.webp",
+            "type": "Company - Sopra Steria",
+            "description" : "Being part of a large multicultural team, in charge of re-skinning a modularized banking app using a low-code proprietary remote app configuration, making the app fully customizable and modifiable directly from a back-office, which was adapted for all languages, including those that are read from right to left.",
+            "skills": "Android, Kotlin, MVVM, Jetpack, Koin, Koin-test, Retrofit2, AndroidX, LiveData, Firebase, Room, Glide, Mockito, Robolectric, Locale",
+            "techLogoPath": "assets/images/skills/android.png",
+            "screenshots": [
+                "assets/images/projects/dsbank/screenshot1.jpg",
+                "assets/images/projects/dsbank/screenshot2.jpg",
+                "assets/images/projects/dsbank/screenshot3.jpg"
+            ],
+            "webLink": "https://sbs-software.com/digital-banking-suite/"
+        },
+        {
+            "name": "Visual Sensor - Visual Nacert",
+            "logo": "assets/images/projects/visualsensor/logo.webp",
+            "type": "Company - Cuatroochenta",
+            "description" : "I single-handedly developed a hybrid application from scratch for crop monitoring, enabling real-time visualization of key KPIs such as temperature, humidity, wind speed, and direction through interactive charts and maps. The app connects to IoT sensors installed in the field and offers advanced decision-making tools by analyzing soil, plant, and weather conditions. It includes personalized alerts, expert recommendations, and value-added services like installation, maintenance.",
+            "skills": "Flutter, Dart, Clean Architecture, Cubit, BLoC, freezed, Dio, fl_chart, mockito, Widget Test, Firebase, Equatable, flutter_localizations",
+            "techLogoPath": "assets/images/skills/flutter.png",
+            "screenshots": [
+                "assets/images/projects/visualsensor/screenshot1.png",
+                "assets/images/projects/visualsensor/screenshot2.png",
+                "assets/images/projects/visualsensor/screenshot3.png",
+                "assets/images/projects/visualsensor/screenshot4.png"
+            ],
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.visualnacert.visualsensor",
+            "appStoreLink": "https://apps.apple.com/es/app/visual-sensor/id1567881739"
+        },
+        {
+            "name": "Druni App - Druni",
+            "logo": "assets/images/projects/druni/logo.webp",
+            "type": "Company - Cuatroochenta",
+            "description" : "I was part of the development team for the Druni Perfumería mobile application, a retail platform that offers users access to an extensive catalog of beauty and cosmetic products, personalized offers, a loyalty points system, store locator, and online order tracking—designed to enhance the shopping experience both in-store and online.",
+            "skills": "Flutter, Dart, Clean Architecture, Cubit, BLoC, freezed, Dio, mockito, graph_ql, Magento, Widget Test, Firebase, Equatable, flutter_localizations",
+            "techLogoPath": "assets/images/skills/flutter.png",
+            "screenshots": [
+                "assets/images/projects/druni/screenshot1.jpg",
+                "assets/images/projects/druni/screenshot2.jpg",
+                "assets/images/projects/druni/screenshot3.jpg",
+                "assets/images/projects/druni/screenshot4.jpg"
+            ],
+            "playStoreLink": "https://play.google.com/store/apps/details?id=es.druni.druni_app&hl=es&gl=US",
+            "appStoreLink": "https://apps.apple.com/es/app/perfumer%C3%ADas-druni/id1592321069"
+        },
+        {
+            "name": "PosterXXL - Photobox",
+            "logo": "assets/images/projects/posterxxl/logo.webp",
+            "type": "Company - Cuatroochenta",
+            "description" : "I was part of the team responsible for developing the native Android app for PosterXXL, a leading German platform for personalized photo products. The app allows users to design and order custom items like photo albums, mugs, calendars, posters, and canvases directly from their smartphones or tablets. It features a built-in editor for customizing products with text, effects, and images from various sources (e.g., Dropbox, Facebook), and includes functionalities like real-time previews, themed templates, and push notifications for promotions—delivering a seamless user experience from creation to purchase.",
+            "skills": "Android, Kotlin, MVVM, Jetpack, Dagger2, Room, Retrofit2, AndroidX, LiveData, Firebase, Glide, AppsFlyer, Locale",
+            "techLogoPath": "assets/images/skills/android.png",
+            "screenshots": [
+                "assets/images/projects/posterxxl/screenshot1.png",
+                "assets/images/projects/posterxxl/screenshot2.png",
+                "assets/images/projects/posterxxl/screenshot3.png",
+                "assets/images/projects/posterxxl/screenshot4.png"
+            ],
+            "webLink": "https://cuatroochenta.com/en/projects/poster-xxl/"
+        },
+        {
+            "name": "Skiana - Skiana",
+            "logo": "assets/images/projects/skiana/logo.jpg",
+            "type": "Company - Cuatroochenta",
+            "description" : "I was part of the team that developed the SKIANA® CARE hybrid app using Flutter—a virtual skin assistant powered by proprietary AI algorithms. Designed by experts in dermatology, cosmetics, and allergy, the app analyzes the user's skin and health status in under a minute through facial recognition and a smart questionnaire. It delivers personalized, brand-independent product recommendations, taking into account allergies, skin conditions, and individual preferences. SKIANA® also promotes ethical and sustainable consumption, aligning with EU 2030 goals, while fostering a user community focused on health and well-being.",
+            "skills": "Flutter, Dart, Clean Architecture, Cubit, BLoC, freezed, Dio, Skiana SDK, Widget Test, Firebase, Equatable, flutter_localizations",
+            "techLogoPath": "assets/images/skills/flutter.png",
+            "screenshots": [
+                "assets/images/projects/skiana/screenshot1.png",
+                "assets/images/projects/skiana/screenshot2.jpg",
+                "assets/images/projects/skiana/screenshot3.png",
+                "assets/images/projects/skiana/screenshot4.png"
+            ],
+            "webLink": "https://www.skiana.com/en/skiana/skiana-care-app/"
+        },
+        {
+            "name": "Sportmaniacs App - Sportmaniacs",
+            "logo": "assets/images/projects/sportmaniacs/logo.png",
+            "type": "Company - Cuatroochenta",
+            "description" : "I was part of the team behind the development of the Sportmaniacs native Android app, a platform designed for runners and sports enthusiasts to easily access race information, track results in real time, and view detailed statistics and rankings. The app allows users to register for events, receive live notifications, and even follow other participants during a race. It offers an intuitive and dynamic experience for both amateur and professional athletes, integrating timing systems and performance tracking to enhance participation in sporting events.",
+            "skills": "Android, Java, MVP, Retrofit2, AppCompat, Picasso, AsyncTask, Firebase",
+            "techLogoPath": "assets/images/skills/android.png",
+            "screenshots": [
+                "assets/images/projects/sportmaniacs/screenshot1.png",
+                "assets/images/projects/sportmaniacs/screenshot2.png",
+                "assets/images/projects/sportmaniacs/screenshot3.png",
+                "assets/images/projects/sportmaniacs/screenshot4.png"
+            ],
+            "webLink": "https://sportmaniacs.en.uptodown.com/android"
+        }
+    ]
+}

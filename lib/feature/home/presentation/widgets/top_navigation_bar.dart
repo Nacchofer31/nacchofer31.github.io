@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
+extension on Routes {
+  static final routeNamesMap = {
+    Routes.about: 'About',
+    Routes.education: 'Education',
+    Routes.experience: 'Experience',
+    Routes.projects: 'Projects',
+  };
+
+  String get name => routeNamesMap[this] ?? '';
+}
+
 class TopNavigationBar extends StatelessWidget {
   const TopNavigationBar({
     super.key,
@@ -12,40 +23,36 @@ class TopNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMediumScreenOrSmaller = Responsive.isMediumScreenOrSmaller(context);
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        Expanded(
-          child: Align(
-            alignment: isMediumScreenOrSmaller
-                ? Alignment.centerLeft
-                : Alignment.center,
-            child: TabBar(
-              controller: tabController,
-              isScrollable: true,
-              physics: const BouncingScrollPhysics(),
-              indicatorColor: accentColor(context),
-              tabs: const [
-                Tab(text: 'About'),
-                Tab(text: 'Experience'),
-                Tab(text: 'Education'),
-              ],
-              onTap: (index) => Navigator.pushNamed(context, index.routePath),
+    return BlocListener<HomeCubit, HomeState>(
+      listenWhen: (prev, curr) => prev.selectedPage != curr.selectedPage,
+      listener: (context, state) => Navigator.pushReplacementNamed(
+          context, Routes.values[state.selectedPage.index].path),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            child: Align(
+              alignment: isMediumScreenOrSmaller
+                  ? Alignment.centerLeft
+                  : Alignment.center,
+              child: TabBar(
+                controller: tabController,
+                isScrollable: true,
+                physics: const BouncingScrollPhysics(),
+                indicatorColor: accentColor(context),
+                tabs: Routes.values
+                    .map(
+                      (e) => Tab(text: e.name),
+                    )
+                    .toList(),
+                onTap: (index) =>
+                    context.read<HomeCubit>().changePage(Routes.values[index]),
+              ),
             ),
           ),
-        ),
-        SizedBox(width: isMediumScreenOrSmaller ? 64 : 0),
-      ],
+          SizedBox(width: isMediumScreenOrSmaller ? 64 : 0),
+        ],
+      ),
     );
   }
-}
-
-extension on int {
-  static final _routes = {
-    0: Routes.about,
-    1: Routes.experience,
-    2: Routes.education
-  };
-
-  String get routePath => _routes[this]?.path ?? '';
 }

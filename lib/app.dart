@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
             final isDarkMode = themeController.isDarkMode;
             const primary = Colors.blue;
             final cardColor =
-                isDarkMode ? const Color(0xff1E1E1F) : Colors.white;
+                isDarkMode ? const Color(0xff1E1E1F) : Colors.grey.shade200;
             return MaterialApp(
               title: 'Ignacio Ferrer',
+              home: Container(),
               theme: ThemeData(
                 primarySwatch: Colors.blue,
                 brightness: isDarkMode ? Brightness.dark : Brightness.light,
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
                     side: BorderSide(
                         width: 1,
                         color: const Color(0xff383838)
-                            .withOpacity(isDarkMode ? 1 : 0.1)),
+                            .withValues(alpha: isDarkMode ? 1 : 0.3)),
                   ),
                   elevation: 0,
                   margin: const EdgeInsets.all(12),
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               scrollBehavior: CustomScrollBehavior(),
               onGenerateRoute: generateRoute,
-              initialRoute: '/about',
+              initialRoute: Routes.about.path,
               onUnknownRoute: (_) => MaterialPageRoute(
                 builder: (_) => const HomePage(
                   child: NotFoundRoute(),

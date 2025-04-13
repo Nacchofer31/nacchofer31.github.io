@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -20,16 +21,14 @@ class _HomePageState extends State<HomePage>
   late TabController tabController;
 
   int get routeIndex {
-    return widget.index.clamp(0, 2);
+    return widget.index.clamp(0, 3);
   }
 
-  int selectedMenu = 0;
-
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     tabController = TabController(
-      length: 3,
+      length: Routes.values.length,
       vsync: this,
       initialIndex: routeIndex,
     );
@@ -38,58 +37,90 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final themeController = Provider.of<ThemeController>(context);
-    final getIt = GetIt.instance;
-    return BlocProvider<HomeCubit>(
-      create: (context) => getIt.get<HomeCubit>(),
-      child: StreamBuilder(
-        stream: themeController.state,
-        builder: (context, snapshot) => Scaffold(
-          body: Stack(
-            children: [
-              Center(
-                child: Container(
-                  padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                  width: Responsive.maxContainerWidth(context, 1400),
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      TopNavigationBar(tabController: tabController),
-                      const SizedBox(height: 24),
-                      Expanded(
-                        child: widget.child ??
-                            TabBarView(
-                              controller: tabController,
-                              children: const [
-                                AboutPage(),
-                                ExperiencePage(),
-                                EducationPage(),
-                              ],
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
+    return StreamBuilder(
+      stream: themeController.state,
+      builder: (context, snapshot) => Scaffold(
+        body: Stack(
+          children: [
+            Center(
+              child: Container(
                 padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    onPressed: () => themeController.toogle(),
-                    icon: Icon(
-                      themeController.isDarkMode
-                          ? Icons.dark_mode
-                          : Icons.light_mode,
+                width: Responsive.maxContainerWidth(context, 1400),
+                height: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    TopNavigationBar(tabController: tabController),
+                    const SizedBox(height: 24),
+                    Expanded(
+                      child: widget.child ??
+                          TabBarView(
+                            physics: const NeverScrollableScrollPhysics(),
+                            controller: tabController,
+                            children: const [
+                              AboutPage(),
+                              ExperiencePage(),
+                              EducationPage(),
+                              ProjectsPage(),
+                            ],
+                          ),
                     ),
-                  ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    InkWell(
+                      onTap: () async => await _launchUrl(
+                          'https://github.com/Nacchofer31/CV/raw/master/CV.pdf'),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.download,
+                            ),
+                            !Responsive.isMediumScreenOrSmaller(context)
+                                ? const Padding(
+                                    padding: EdgeInsets.only(left: 3),
+                                    child: Text('Download Resume'))
+                                : const SizedBox.shrink(),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    IconButton(
+                      onPressed: () => themeController.toogle(),
+                      icon: Icon(
+                        themeController.isDarkMode
+                            ? Icons.dark_mode
+                            : Icons.light_mode,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(Uri.parse(url))) {
+      throw Exception('Could not launch $url');
+    }
   }
 }

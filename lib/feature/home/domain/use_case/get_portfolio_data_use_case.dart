@@ -7,11 +7,14 @@ class GetPortfolioDataUseCase {
   final ExperienceRepository experienceRepository;
   @protected
   final EducationRepository educationRepository;
+  @protected
+  final ProjectsRepository projectsRepository;
 
   GetPortfolioDataUseCase({
     required this.aboutRepository,
     required this.experienceRepository,
     required this.educationRepository,
+    required this.projectsRepository,
   });
 
   Future<HomeModel> call() async {
@@ -20,6 +23,7 @@ class GetPortfolioDataUseCase {
     final skills = await aboutRepository.getSkills();
     final educationList = await educationRepository.getEducationList();
     final experienceList = await experienceRepository.getExperienceList();
+    final projectsList = await projectsRepository.getProjects();
 
     return HomeModel(
       profileModel: profileModel,
@@ -27,6 +31,7 @@ class GetPortfolioDataUseCase {
       skillList: skills,
       educationList: educationList,
       experienceList: experienceList,
+      projects: projectsList,
     );
   }
 }

@@ -28,7 +28,7 @@ class ExperiencePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Experience',
+                      'Experience 💼',
                       style: Responsive.mainHeadline(context),
                     ),
                     SizedBox(height: Responsive.maxSmallSpacing(context)),

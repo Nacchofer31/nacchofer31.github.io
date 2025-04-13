@@ -20,10 +20,16 @@ class HomeCubit extends Cubit<HomeState> {
 
   void getData() async {
     final portfolioData = await getPortfolioDataUseCase();
-    emit(
+    emitIfNotClosed(
       state.copyWith(
         homeModel: portfolioData,
       ),
     );
   }
+
+  void changePage(Routes selectedRoute) => emitIfNotClosed(
+        state.copyWith(
+          selectedPage: selectedRoute,
+        ),
+      );
 }

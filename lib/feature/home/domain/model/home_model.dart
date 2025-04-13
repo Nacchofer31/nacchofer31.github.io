@@ -10,5 +10,6 @@ class HomeModel with _$HomeModel {
     @Default(<ExperienceModel>[]) List<ExperienceModel> experienceList,
     @Default(<EducationModel>[]) List<EducationModel> educationList,
     @Default(<SkillModel>[]) List<SkillModel> skillList,
+    @Default(<ProjectModel>[]) List<ProjectModel> projects,
   }) = _HomeModel;
 }

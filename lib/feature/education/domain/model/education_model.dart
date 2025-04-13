@@ -12,27 +12,3 @@ class EducationModel with _$EducationModel {
     @Default('') String description,
   }) = _EducationModel;
 }
-
-class EducationModeld {
-  final String collegeName;
-  final String icon;
-  final String date;
-  final String location;
-  final String description;
-
-  EducationModeld({
-    this.collegeName = '',
-    this.icon = '',
-    this.date = '',
-    this.location = '',
-    this.description = '',
-  });
-
-  factory EducationModeld.fromJson(Map<String, dynamic> map) => EducationModeld(
-        collegeName: map['collegeName'],
-        icon: map['icon'],
-        date: map['date'],
-        location: map['location'],
-        description: map['description'],
-      );
-}
