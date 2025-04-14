@@ -65,10 +65,36 @@ class AboutCard extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),
+            const SizedBox(height: 5),
+            InkWell(
+              onTap: () async => await _launchUrl(
+                  'https://github.com/Nacchofer31/CV/raw/master/CV.pdf'),
+              child: const Padding(
+                padding: EdgeInsets.all(1),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.download,
+                    ),
+                    Padding(
+                        padding: EdgeInsets.only(left: 3),
+                        child: Text('Download Resume')),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  @protected
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(Uri.parse(url))) {
+      throw Exception('Could not launch $url');
+    }
   }
 }

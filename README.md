@@ -25,6 +25,17 @@ It showcases my experience, skills, and projects in a clean and interactive inte
 
 ---
 
+## 🗂️ Content Configuration
+
+All the content displayed on the website is fully configured from the `assets/` directory:
+
+- `assets/raw/` contains the content files for each section, encoded in **JSON**.
+- `assets/images/` stores all images used across the site.
+
+This setup allows for easy customization of the portfolio by simply modifying or replacing the files in these folders.
+
+---
+
 ## 🚧 Status
 
 This project is a **Work in Progress (WIP)** — constantly improving and evolving.
