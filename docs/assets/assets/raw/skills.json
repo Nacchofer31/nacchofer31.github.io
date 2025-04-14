@@ -1,13 +1,13 @@
 {
     "skills": [
         {
-            "name": "Android",
-            "description": "Kotlin, Jetpack, Compose, LiveData, Koin, RxJava, Flows, Room, Retrofit2, Koin-test, Mockito",
+            "name": "Android Development",
+            "description": "Kotlin, MMVM, Clean Arch, Jetpack, Compose, KMP, LiveData, Koin, RxJava, Livedata, Flows, Room, Retrofit2, Koin-test, Roboelectric, Mockito, Spotless, Jacoco",
             "techLogoPath": "assets/images/skills/android.png"
         },
         {
-            "name": "Flutter",
-            "description": "Dart, Clean Architecture, BLoC, Cubit, Freezed, GetIt, RxDart, Provider, Mockito, Dio, Melos",
+            "name": "Flutter Development",
+            "description": "Dart, MVVM, Clean Arch, BLoC, Cubit, freezed, GetIt, RxDart, Provider, Riverpod, Flutter Hooks, Hive, Sqflite, graphql_flutter, Mocktail, Dio, Melos, flutter_localizations",
             "techLogoPath": "assets/images/skills/flutter.png"
         },
         {
@@ -17,7 +17,7 @@
         },
         {
             "name": "Software Development",
-            "description": "Clean Code, Design Patterns, GIT, CLI, Agile Methodology, SCRUM, Pair-programming, DevOps Lifecycles",
+            "description": "Clean Code, Design Patterns, GIT, CLI, Agile Methodology, SCRUM, Pair-programming, DevOps Lifecycles, Cursor, Ollama, Qwen, Deepseek, ChatGPT, Copilot",
             "techLogoPath": "assets/images/skills/code.png"
         },
         {

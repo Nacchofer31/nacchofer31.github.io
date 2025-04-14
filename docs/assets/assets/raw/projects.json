@@ -121,6 +121,21 @@
                 "assets/images/projects/sportmaniacs/screenshot4.png"
             ],
             "webLink": "https://sportmaniacs.en.uptodown.com/android"
+        },
+        {
+            "name": "RandomBoxd - Nacchofer31",
+            "logo": "assets/images/projects/randomboxd/logo.png",
+            "type": "Personal Project",
+            "description" : "I independently developed RandomBoxd, a personal Kotlin Multiplatform app for Android and iOS that fetches a random movie from a Letterboxd user's watchlist or custom lists. The app features intuitive user search, seamless deep linking with the Letterboxd app, and a clean cross-platform experience—making it easy for film enthusiasts to discover what to watch next in a fun, effortless way.",
+            "skills": "Android, Kotlin, MVVM, Kotlin Multi Platform, Jetpack Compose, Koin, Room, Ktor, AndroidX, Deeplinks, Coil, Spotless, Jacoco",
+            "techLogoPath": "assets/images/skills/android.png",
+            "screenshots": [
+                "assets/images/projects/randomboxd/screenshot1.png",
+                "assets/images/projects/randomboxd/screenshot2.png",
+                "assets/images/projects/randomboxd/screenshot3.png",
+                "assets/images/projects/randomboxd/screenshot4.png"
+            ],
+            "webLink": "https://github.com/Nacchofer31/RandomBoxd"
         }
     ]
 }
