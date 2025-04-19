@@ -18,7 +18,7 @@ class ExperienceTask extends StatelessWidget {
         decoration: BoxDecoration(
           border: BorderDirectional(
             start: BorderSide(
-              color: accentColor(context).withValues(alpha: 0.6),
+              color: accentColor.withValues(alpha: 0.6),
               width: 2,
             ),
           ),

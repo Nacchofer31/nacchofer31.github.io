@@ -9,7 +9,7 @@ class AccentWidget extends StatelessWidget {
         height: 6,
         width: 48,
         decoration: BoxDecoration(
-          color: accentColor(context),
+          color: accentColor,
           borderRadius: BorderRadius.circular(5),
         ),
       );

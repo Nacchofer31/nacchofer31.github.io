@@ -14,7 +14,7 @@ Color cardBorderColor(BuildContext context) {
   return const Color(0xff383838).withValues(alpha: isDarkMode ? 1 : 0.2);
 }
 
-Color accentColor(BuildContext context) => const Color(0xff23395d);
+Color get accentColor => const Color(0xff23395d);
 
 Color bodyTextColor(BuildContext context) {
   final isDarkMode = Provider.of<ThemeController>(context).isDarkMode;

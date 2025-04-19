@@ -28,7 +28,6 @@ class TopNavigationBar extends StatelessWidget {
       listener: (context, state) => Navigator.pushReplacementNamed(
           context, Routes.values[state.selectedPage.index].path),
       child: Row(
-        mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
             child: Align(
@@ -39,7 +38,7 @@ class TopNavigationBar extends StatelessWidget {
                 controller: tabController,
                 isScrollable: true,
                 physics: const BouncingScrollPhysics(),
-                indicatorColor: accentColor(context),
+                indicatorColor: accentColor,
                 tabs: Routes.values
                     .map(
                       (e) => Tab(text: e.name),

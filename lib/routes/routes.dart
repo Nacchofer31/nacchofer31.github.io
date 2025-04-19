@@ -21,9 +21,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     transitionDuration: Duration.zero,
     reverseTransitionDuration: Duration.zero,
     pageBuilder: (_, __, ___) => routeIndex != null
-        ? BlocProvider<HomeCubit>(
-            create: (context) => GetIt.instance.get<HomeCubit>(),
-            child: HomePage(index: routeIndex))
+        ? HomePage(index: routeIndex)
         : const NotFoundRoute(),
   );
 }

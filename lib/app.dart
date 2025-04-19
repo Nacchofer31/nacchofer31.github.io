@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                 isDarkMode ? const Color(0xff1E1E1F) : Colors.grey.shade200;
             return MaterialApp(
               title: 'Ignacio Ferrer',
-              home: Container(),
+              home: const HomePage(),
               theme: ThemeData(
                 primarySwatch: Colors.blue,
                 brightness: isDarkMode ? Brightness.dark : Brightness.light,

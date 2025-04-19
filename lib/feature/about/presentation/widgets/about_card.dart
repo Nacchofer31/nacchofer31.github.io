@@ -49,8 +49,7 @@ class AboutCard extends StatelessWidget {
                     height: 35,
                     width: 35,
                     'assets/images/linkedin.svg',
-                    colorFilter:
-                        ColorFilter.mode(accentColor(context), BlendMode.dstIn),
+                    colorFilter: ColorFilter.mode(accentColor, BlendMode.dstIn),
                   ),
                 ),
                 IconButton(
@@ -60,8 +59,7 @@ class AboutCard extends StatelessWidget {
                     height: 35,
                     width: 35,
                     'assets/images/github.svg',
-                    colorFilter:
-                        ColorFilter.mode(accentColor(context), BlendMode.dstIn),
+                    colorFilter: ColorFilter.mode(accentColor, BlendMode.dstIn),
                   ),
                 )
               ],
