@@ -23,35 +23,30 @@ class TopNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMediumScreenOrSmaller = Responsive.isMediumScreenOrSmaller(context);
-    return BlocListener<HomeCubit, HomeState>(
-      listenWhen: (prev, curr) => prev.selectedPage != curr.selectedPage,
-      listener: (context, state) => Navigator.pushReplacementNamed(
-          context, Routes.values[state.selectedPage.index].path),
-      child: Row(
-        children: [
-          Expanded(
-            child: Align(
-              alignment: isMediumScreenOrSmaller
-                  ? Alignment.centerLeft
-                  : Alignment.center,
-              child: TabBar(
-                controller: tabController,
-                isScrollable: true,
-                physics: const BouncingScrollPhysics(),
-                indicatorColor: accentColor,
-                tabs: Routes.values
-                    .map(
-                      (e) => Tab(text: e.name),
-                    )
-                    .toList(),
-                onTap: (index) =>
-                    context.read<HomeCubit>().changePage(Routes.values[index]),
-              ),
+    return Row(
+      children: [
+        Expanded(
+          child: Align(
+            alignment: isMediumScreenOrSmaller
+                ? Alignment.centerLeft
+                : Alignment.center,
+            child: TabBar(
+              controller: tabController,
+              isScrollable: true,
+              physics: const BouncingScrollPhysics(),
+              indicatorColor: accentColor,
+              tabs: Routes.values
+                  .map(
+                    (e) => Tab(text: e.name),
+                  )
+                  .toList(),
+              onTap: (index) =>
+                  context.read<HomeCubit>().changePage(Routes.values[index]),
             ),
           ),
-          SizedBox(width: isMediumScreenOrSmaller ? 64 : 0),
-        ],
-      ),
+        ),
+        SizedBox(width: isMediumScreenOrSmaller ? 64 : 0),
+      ],
     );
   }
 }
