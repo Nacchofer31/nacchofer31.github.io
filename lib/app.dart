@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,41 +22,48 @@ class MyApp extends StatelessWidget {
             const primary = Colors.blue;
             final cardColor =
                 isDarkMode ? const Color(0xff1E1E1F) : Colors.grey.shade200;
+
+            final baseTheme = ThemeData(
+              primarySwatch: Colors.blue,
+              brightness: isDarkMode ? Brightness.dark : Brightness.light,
+              iconTheme: const IconThemeData(
+                color: primary,
+              ),
+              scaffoldBackgroundColor: isDarkMode
+                  ? const Color(0xff121212)
+                  : const Color.fromARGB(255, 247, 247, 247),
+              textButtonTheme: const TextButtonThemeData(
+                style: ButtonStyle(
+                  padding: WidgetStatePropertyAll(EdgeInsets.all(18)),
+                ),
+              ),
+              cardTheme: CardTheme(
+                color: cardColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                  side: BorderSide(
+                      width: 1,
+                      color: const Color(0xff383838)
+                          .withValues(alpha: isDarkMode ? 1 : 0.3)),
+                ),
+                elevation: 0,
+                margin: const EdgeInsets.all(12),
+              ),
+              tabBarTheme: TabBarTheme(
+                indicatorSize: TabBarIndicatorSize.label,
+                labelColor: primary,
+                unselectedLabelColor: isDarkMode
+                    ? const Color.fromARGB(255, 209, 209, 209)
+                    : const Color.fromARGB(255, 51, 51, 51),
+              ),
+            );
+
             return MaterialApp(
               title: 'Ignacio Ferrer',
               home: const HomePage(),
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-                brightness: isDarkMode ? Brightness.dark : Brightness.light,
-                iconTheme: const IconThemeData(
-                  color: primary,
-                ),
-                scaffoldBackgroundColor: isDarkMode
-                    ? const Color(0xff121212)
-                    : const Color.fromARGB(255, 247, 247, 247),
-                textButtonTheme: const TextButtonThemeData(
-                  style: ButtonStyle(
-                    padding: WidgetStatePropertyAll(EdgeInsets.all(18)),
-                  ),
-                ),
-                cardTheme: CardTheme(
-                  color: cardColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                    side: BorderSide(
-                        width: 1,
-                        color: const Color(0xff383838)
-                            .withValues(alpha: isDarkMode ? 1 : 0.3)),
-                  ),
-                  elevation: 0,
-                  margin: const EdgeInsets.all(12),
-                ),
-                tabBarTheme: TabBarTheme(
-                  indicatorSize: TabBarIndicatorSize.label,
-                  labelColor: primary,
-                  unselectedLabelColor: isDarkMode
-                      ? const Color.fromARGB(255, 209, 209, 209)
-                      : const Color.fromARGB(255, 51, 51, 51),
+              theme: baseTheme.copyWith(
+                textTheme: GoogleFonts.poppinsTextTheme(
+                  baseTheme.textTheme,
                 ),
               ),
               debugShowCheckedModeBanner: false,
@@ -63,9 +71,7 @@ class MyApp extends StatelessWidget {
               onGenerateRoute: generateRoute,
               initialRoute: Routes.about.path,
               onUnknownRoute: (_) => MaterialPageRoute(
-                builder: (_) => const HomePage(
-                  child: NotFoundRoute(),
-                ),
+                builder: (_) => const HomePage(),
               ),
             );
           },

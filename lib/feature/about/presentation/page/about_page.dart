@@ -12,6 +12,7 @@ class AboutPage extends StatelessWidget {
             ProfileCard(),
             AboutCard(),
             SkillsCard(),
+            FooterView(),
           ],
         ),
       );
