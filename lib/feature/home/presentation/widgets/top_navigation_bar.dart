@@ -33,6 +33,7 @@ class TopNavigationBar extends StatelessWidget {
             child: TabBar(
               controller: tabController,
               isScrollable: true,
+              indicatorWeight: 5,
               physics: const BouncingScrollPhysics(),
               indicatorColor: accentColor,
               tabs: Routes.values

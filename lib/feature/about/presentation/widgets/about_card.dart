@@ -21,7 +21,7 @@ class AboutCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'About Me 👤',
+              'About Me',
               style: Responsive.mainHeadline(context),
             ),
             SizedBox(height: Responsive.maxSmallSpacing(context)),
@@ -34,7 +34,7 @@ class AboutCard extends StatelessWidget {
                     color: bodyTextColor(context),
                   ),
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 30),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -42,41 +42,51 @@ class AboutCard extends StatelessWidget {
                   'Social Links:',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
-                IconButton(
-                  onPressed: () => launchUrl(Uri.parse(
-                      'https://www.linkedin.com/in/ignacio-ferrer-sanz/')),
-                  icon: SvgPicture.asset(
-                    height: 35,
-                    width: 35,
-                    'assets/images/linkedin.svg',
-                    colorFilter: ColorFilter.mode(accentColor, BlendMode.dstIn),
+                const SizedBox(width: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: InkWell(
+                    onTap: () => launchUrl(Uri.parse(
+                        'https://www.linkedin.com/in/ignacio-ferrer-sanz/')),
+                    child: SvgPicture.asset(
+                      height: 25,
+                      width: 25,
+                      'assets/images/linkedin.svg',
+                      colorFilter:
+                          ColorFilter.mode(accentColor, BlendMode.srcIn),
+                    ),
                   ),
                 ),
-                IconButton(
-                  onPressed: () =>
-                      launchUrl(Uri.parse('https://github.com/Nacchofer31')),
-                  icon: SvgPicture.asset(
-                    height: 35,
-                    width: 35,
-                    'assets/images/github.svg',
-                    colorFilter: ColorFilter.mode(accentColor, BlendMode.dstIn),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: InkWell(
+                    onTap: () =>
+                        launchUrl(Uri.parse('https://github.com/Nacchofer31')),
+                    child: SvgPicture.asset(
+                      height: 25,
+                      width: 25,
+                      'assets/images/github.svg',
+                      colorFilter:
+                          ColorFilter.mode(accentColor, BlendMode.srcIn),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(height: 5),
             InkWell(
               onTap: () async => await _launchUrl(
                   'https://github.com/Nacchofer31/CV/raw/master/CV.pdf'),
-              child: const Padding(
-                padding: EdgeInsets.all(1),
+              child: Padding(
+                padding: const EdgeInsets.all(1),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
                       Icons.download,
+                      color: accentColor,
                     ),
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.only(left: 3),
                         child: Text('Download Resume')),
                   ],

@@ -30,7 +30,7 @@ class ProjectsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Projects 🚀',
+                          'Projects',
                           style: Responsive.mainHeadline(context),
                         ),
                         SizedBox(height: Responsive.maxSmallSpacing(context)),

@@ -30,7 +30,7 @@ class EducationPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Education 🎓',
+                          'Education',
                           style: Responsive.mainHeadline(context),
                         ),
                         SizedBox(height: Responsive.maxSmallSpacing(context)),

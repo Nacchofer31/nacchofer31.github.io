@@ -9,7 +9,7 @@
             "tasks": [
                 {
                     "name" : "Senior Flutter Engineer",
-                    "description": "Led the migration of a Xamarin fitness app with RFID and Bluetooth integration to Flutter, ensuring clean code, solid architecture, and best practices. ~ Working with: Clean Arch, Melos, Cubit, BLoC, freezed, Dio, BlueMan, Sqflite, OneSignal"
+                    "description": "Led the migration of a Xamarin fitness app with RFID and Bluetooth integration to Flutter, ensuring clean code, solid architecture, and best practices.\n\n» Flutter (dart) ~ Working with: Clean Arch, Melos, Cubit, BLoC, freezed, Dio, BlueMan, Sqflite, OneSignal"
                 }
             ]
         },
@@ -39,7 +39,7 @@
             "tasks": [
                 {
                     "name" : "Flutter Engineer",
-                    "description": "» Flutter ~ Worked with: Clean Architecture, BLoC, GetIt, Dartz, RxDart, Equatable, TDD, Mockito"
+                    "description": "» Flutter (dart) ~ Worked with: Clean Architecture, BLoC, GetIt, Dartz, RxDart, Equatable, TDD, Mockito"
                 },
                 {
                     "name" : "Android Engineer",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nacchofer31_portfolio/portfolio.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 enum ProjectLinkType {
@@ -30,9 +31,16 @@ class LinkWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () => launchUrl(Uri.parse(link)),
-      icon: SvgPicture.asset(height: 35, type.icon),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: InkWell(
+        onTap: () => launchUrl(Uri.parse(link)),
+        child: SvgPicture.asset(
+          height: 25,
+          type.icon,
+          colorFilter: ColorFilter.mode(accentColor, BlendMode.srcIn),
+        ),
+      ),
     );
   }
 }

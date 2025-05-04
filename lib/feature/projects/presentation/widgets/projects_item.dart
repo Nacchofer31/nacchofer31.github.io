@@ -140,16 +140,19 @@ class ProjectItem extends StatelessWidget {
                       const SizedBox(width: 5),
                       if (projectData.appStoreLink != null)
                         LinkWidget(
-                            type: ProjectLinkType.appstore,
-                            link: projectData.appStoreLink!),
+                          type: ProjectLinkType.appstore,
+                          link: projectData.appStoreLink!,
+                        ),
                       if (projectData.playStoreLink != null)
                         LinkWidget(
-                            type: ProjectLinkType.playstore,
-                            link: projectData.playStoreLink!),
+                          type: ProjectLinkType.playstore,
+                          link: projectData.playStoreLink!,
+                        ),
                       if (projectData.webLink != null)
                         LinkWidget(
-                            type: ProjectLinkType.web,
-                            link: projectData.webLink!)
+                          type: ProjectLinkType.web,
+                          link: projectData.webLink!,
+                        )
                     ],
                   ),
                 ],

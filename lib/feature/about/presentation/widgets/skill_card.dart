@@ -19,7 +19,7 @@ class SkillsCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Skills 🛠️',
+              'Skills',
               style: Responsive.mainHeadline(context),
             ),
             SizedBox(height: Responsive.maxSmallSpacing(context)),
