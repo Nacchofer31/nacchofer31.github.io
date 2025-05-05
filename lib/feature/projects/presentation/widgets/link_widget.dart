@@ -36,7 +36,7 @@ class LinkWidget extends StatelessWidget {
       child: InkWell(
         onTap: () => launchUrl(Uri.parse(link)),
         child: SvgPicture.asset(
-          height: 25,
+          height: 30,
           type.icon,
           colorFilter: ColorFilter.mode(accentColor, BlendMode.srcIn),
         ),
