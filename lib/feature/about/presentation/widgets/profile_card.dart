@@ -11,13 +11,13 @@ class ProfileCard extends StatelessWidget {
     );
     final isExtremelySmall = Responsive.isExtremelySmall(context);
     return AnimatedContainer(
+      width: double.infinity,
       duration: const Duration(milliseconds: 350),
       padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
       child: Row(
         mainAxisAlignment: isExtremelySmall
             ? MainAxisAlignment.center
             : MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
         children: [
           isExtremelySmall
               ? const SizedBox.shrink()
@@ -43,9 +43,12 @@ class ProfileCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                profileModel.fullName,
-                style: Responsive.mainHeadline(context),
+              Flexible(
+                child: Text(
+                  profileModel.fullName,
+                  overflow: TextOverflow.ellipsis,
+                  style: Responsive.mainHeadline(context),
+                ),
               ),
               SizedBox(height: Responsive.maxSmallSpacing(context)),
               Row(
@@ -66,6 +69,7 @@ class ProfileCard extends StatelessWidget {
                           width: 24,
                           height: 24,
                           decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24),
                             image: DecorationImage(
                               image: Image.network(
                                 profileModel.avatarPath,

@@ -94,29 +94,22 @@ class ProjectItem extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const SizedBox(width: 5),
-                      SizedBox(
-                        width: 35,
-                        height: 35,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            projectData.techIcon,
-                            width: 35,
-                            height: 35,
-                          ),
-                        ),
+                      SkillIcon(
+                        iconPath: projectData.techIcon,
+                        iconColor: projectData.iconColor,
+                        size: 40,
                       ),
                     ],
                   ),
                   Container(
                     height: 500,
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: projectData.screenshots
                           .map(
                             (screenshot) => Padding(
-                              padding: const EdgeInsets.only(right: 20),
+                              padding: const EdgeInsets.only(right: 10),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12),
                                 child: Image.asset(

@@ -54,14 +54,9 @@ class _SkillItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(
-              width: 36,
-              height: 36,
-              child: Image.asset(
-                skillData.techLogoPath,
-                width: 36,
-                height: 36,
-              ),
+            SkillIcon(
+              iconPath: skillData.techLogoPath,
+              iconColor: skillData.iconColor,
             ),
             SizedBox(width: Responsive.maxSmallSpacing(context)),
             Expanded(

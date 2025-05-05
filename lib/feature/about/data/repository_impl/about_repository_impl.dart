@@ -29,10 +29,10 @@ class AboutRepositoryImpl extends AboutRepository {
     return (data['skills'] as List)
         .map(
           (skill) => SkillModel(
-            name: skill['name'],
-            description: skill['description'],
-            techLogoPath: skill['techLogoPath'],
-          ),
+              name: skill['name'],
+              description: skill['description'],
+              techLogoPath: skill['techLogoPath'],
+              iconColor: skill['iconColor']),
         )
         .toList();
   }

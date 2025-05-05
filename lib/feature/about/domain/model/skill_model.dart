@@ -8,5 +8,6 @@ class SkillModel with _$SkillModel {
     @Default('') String name,
     @Default('') String description,
     @Default('') String techLogoPath,
+    @Default('') String iconColor,
   }) = _SkillModel;
 }

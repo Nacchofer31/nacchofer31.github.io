@@ -8,6 +8,7 @@ class ProjectModel with _$ProjectModel {
     @Default('') String name,
     @Default('') String logo,
     @Default('') String techIcon,
+    @Default('') String iconColor,
     @Default('') String type,
     @Default('') String description,
     @Default('') String skills,

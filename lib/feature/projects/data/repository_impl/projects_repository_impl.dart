@@ -17,6 +17,7 @@ class ProjectsRepositoryImpl extends ProjectsRepository {
             description: project['description'],
             skills: project['skills'],
             techIcon: project['techLogoPath'],
+            iconColor: project['iconColor'],
             screenshots: List<String>.from(project['screenshots']),
             appStoreLink: project['appStoreLink'],
             playStoreLink: project['playStoreLink'],
