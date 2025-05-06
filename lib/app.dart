@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
             );
 
             return MaterialApp(
-              title: 'Ignacio Ferrer',
+              title: 'Ignacio Ferrer | Mobile Engineer',
               home: const HomePage(),
               theme: baseTheme.copyWith(
                 textTheme: GoogleFonts.poppinsTextTheme(

@@ -117,7 +117,7 @@
         {
             "name": "Sportmaniacs App - Sportmaniacs",
             "logo": "assets/images/projects/sportmaniacs/logo.png",
-            "type": "Company - Cuatroochenta",
+            "type": "Company - Sportmaniacs",
             "description" : "I was part of the team behind the development of the Sportmaniacs native Android app, a platform designed for runners and sports enthusiasts to easily access race information, track results in real time, and view detailed statistics and rankings. The app allows users to register for events, receive live notifications, and even follow other participants during a race. It offers an intuitive and dynamic experience for both amateur and professional athletes, integrating timing systems and performance tracking to enhance participation in sporting events.",
             "skills": "Android, Java, MVP, Retrofit2, AppCompat, Picasso, AsyncTask, Firebase",
             "techLogoPath": "assets/images/skills/android.svg",
