@@ -11,7 +11,7 @@
 This is my personal **Mobile developer portfolio** built with **Flutter Web**.  
 It showcases my experience, skills, and projects in a clean and interactive interface.
 
-🔗 **Live site:** [https://nacchofer31.github.io/](https://nacchofer31.github.io/)
+🔗 **Live site:** [https://www.nacchofer31.dev/](https://www.nacchofer31.dev/)
 
 ---
 
@@ -19,9 +19,12 @@ It showcases my experience, skills, and projects in a clean and interactive inte
 
 - **Flutter Web** (v3.29+)
 - **Clean Architecture**
+- **Get It**
 - **Cubit / BLoC**
 - **Freezed**
 - **Equatable**
+- **flutter_svg**
+- **url_launcher**
 
 ---
 
