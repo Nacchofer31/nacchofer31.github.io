@@ -73793,7 +73793,7 @@ $1(a){return!0},
 $S:168}
 A.a6c.prototype={
 $2(a,b){var s=null,r=this.a.gSj().b,q=r?B.Dl:B.l5,p=r?B.ae:B.af,o=r?B.AT:B.DE,n=A.fB(24),m=B.D7.yr(r?1:0.3),l=A.tX(p,new A.w1(q,0,B.hT,new A.cP(n,new A.c7(m,1,B.O,-1)),B.fP,s),s,B.G9,B.dN,o,A.auT(s,s,B.jB,B.dN,r?B.Db:B.CY),B.Qn,s)
-return new A.oj(B.m9,"/about",A.aNm(),new A.a6b(),"Ignacio Ferrer",l.aaU(A.aF2(l.p1)),!1,new A.YT(),s)},
+return new A.oj(B.m9,"/about",A.aNm(),new A.a6b(),"Ignacio Ferrer | Mobile Engineer",l.aaU(A.aF2(l.p1)),!1,new A.YT(),s)},
 $S:465}
 A.a6b.prototype={
 $1(a){return A.atq(new A.a6a(),null,t.z)},
