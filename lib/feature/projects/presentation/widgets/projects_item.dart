@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
@@ -104,23 +106,34 @@ class ProjectItem extends StatelessWidget {
                   Container(
                     height: 500,
                     padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: projectData.screenshots
-                          .map(
-                            (screenshot) => Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.asset(
-                                  height: 500,
-                                  screenshot,
-                                  fit: BoxFit.cover,
+                    child: ScrollConfiguration(
+                      behavior:
+                          const MaterialScrollBehavior().copyWith(dragDevices: {
+                        PointerDeviceKind.touch,
+                        PointerDeviceKind.mouse,
+                        PointerDeviceKind.trackpad,
+                        PointerDeviceKind.stylus,
+                        PointerDeviceKind.invertedStylus,
+                        PointerDeviceKind.unknown,
+                      }),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: projectData.screenshots
+                            .map(
+                              (screenshot) => Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image.asset(
+                                    height: 500,
+                                    screenshot,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
-                            ),
-                          )
-                          .toList(),
+                            )
+                            .toList(),
+                      ),
                     ),
                   ),
                   Row(
