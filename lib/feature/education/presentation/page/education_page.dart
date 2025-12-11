@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
+import 'package:nacchofer31_portfolio/utils/slide_in_from_left.dart';
 
-class EducationPage extends StatelessWidget {
+class EducationPage extends StatefulWidget {
   const EducationPage({super.key});
 
   @override
+  State<EducationPage> createState() => _EducationPageState();
+}
+
+class _EducationPageState extends State<EducationPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final educationList = context.select<HomeCubit, List<EducationModel>>(
       (cubit) => cubit.state.homeModel.educationList,
     );
@@ -43,15 +51,16 @@ class EducationPage extends StatelessWidget {
                         horizontal: Responsive.isVerySmall(context)
                             ? 4
                             : Responsive.maxMainSpacing(context) * 1.333),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: educationList
-                          .map(
-                            (EducationModel e) =>
-                                EducationItem(educationData: e),
-                          )
-                          .toList(),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: educationList.length,
+                      itemBuilder: (context, index) {
+                        final item = educationList[index];
+                        return SlideInFromLeft(
+                            delay:
+                                Duration(milliseconds: (300 * index).toInt()),
+                            child: EducationItem(educationData: item));
+                      },
                     ),
                   ),
                 ],
@@ -63,4 +72,7 @@ class EducationPage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

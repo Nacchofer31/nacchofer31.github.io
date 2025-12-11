@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
+import 'package:nacchofer31_portfolio/utils/slide_in_from_left.dart';
 
-class ProjectsPage extends StatelessWidget {
+class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
 
   @override
+  State<ProjectsPage> createState() => _ProjectsPageState();
+}
+
+class _ProjectsPageState extends State<ProjectsPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final projectList = context.select<HomeCubit, List<ProjectModel>>(
       (cubit) => cubit.state.homeModel.projects,
     );
@@ -43,14 +51,16 @@ class ProjectsPage extends StatelessWidget {
                         horizontal: Responsive.isVerySmall(context)
                             ? 4
                             : Responsive.maxMainSpacing(context) * 1.333),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: projectList
-                          .map(
-                            (ProjectModel e) => ProjectItem(projectData: e),
-                          )
-                          .toList(),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: projectList.length,
+                      itemBuilder: (context, index) {
+                        final item = projectList[index];
+                        return SlideInFromLeft(
+                            delay:
+                                Duration(milliseconds: (300 * index).toInt()),
+                            child: ProjectItem(projectData: item));
+                      },
                     ),
                   ),
                 ],
@@ -62,4 +72,7 @@ class ProjectsPage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
