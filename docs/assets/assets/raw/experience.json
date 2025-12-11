@@ -1,6 +1,23 @@
 {
     "clients": [
         {
+            "clientName": "Capgemini",
+            "icon": "assets/images/experience/capgemini.png",
+            "date": "Jun 2025 - Present",
+            "location": "Valencia (Spain) | Hybrid",
+            "description": "Senior Mobile Engineer",
+            "tasks": [
+                {
+                    "name": "Senior Flutter Engineer",
+                    "description": "- Development and maintenance of hybrid applications (Android and iOS) for the Secretaria General de Administración Digital (SGAD), such as: Dehú, FACe, Prevención Juego, Garrapata Alert, CNMC Test Velocidad, SoyFP, Ruta-E, ICA, Mi Portafirmas, Catastro and IGME... using the Flutter hybrid development framework.\n- Leadership tasks development, guiding and supervising junior profiles: creating and assigning simple tasks for their full development.\n- Participation in code reviews to promote best practices, clean code, code coverage through tests, Clean Architecture, and SOLID principles within the team.\n- Full communication with clients, analysts, and designers to extract and specify the requirements for development projects.\n\n» Flutter (dart) ~ Working with: Clean Arch, Cubit, BLoC, freezed, Dio, TestFlight, GetIt, Firebase"
+                },
+                {
+                    "name": "Senior Android Engineer",
+                    "description": "- Creation of Flutter plugins and libraries such as: electronic DNI, a library used by all SGAD apps, being involved in the native Android implementation of these through Kotlin, Java, and the use of Method Channels.\n\n» Android (kotlin & java) ~ Working with: MVVM, Method Channels, Android SDK, Coroutines, Mockito, Room, Clean Code, Firebase"
+                }
+            ]
+        },
+        {
             "clientName": "Hiberus",
             "icon": "assets/images/experience/hiberus.jpg",
             "date": "Sep 2024 - Apr 2025",
@@ -8,8 +25,8 @@
             "description": "Senior Mobile Engineer",
             "tasks": [
                 {
-                    "name" : "Senior Flutter Engineer",
-                    "description": "Led the migration of a Xamarin fitness app with RFID and Bluetooth integration to Flutter, ensuring clean code, solid architecture, and best practices.\n\n» Flutter (dart) ~ Working with: Clean Arch, Melos, Cubit, BLoC, freezed, Dio, BlueMan, Sqflite, OneSignal"
+                    "name": "Senior Flutter Engineer",
+                    "description": "- Migration from scratch of a fitness application, BH Gymloop, developed in Xamarin to the Flutter hybrid development framework for Android and iOS platforms.\n- Complete leadership of the development team composed of senior and junior profiles, adopting best development practices, clean code, Clean Architecture, and SOLID principles.\n- Adoption and integration of Flutter RFID and Bluetooth libraries into the application to enable communication with fitness machines, obtaining KPIs such as speed, intensity, resistance, and heart rate.\n- Use and management of LLMs, Cursor, and Copilot for test creation and code refactoring.\n- Use and management of version control with Git and GitLab, following the GitFlow methodology.\n- Publishing, updating, and uploading versions on Google Play Console and App Store TestFlight.\n\n» Flutter (dart) ~ Working with: Clean Arch, Melos, Cubit, BLoC, freezed, Dio, BlueMan, Sqflite, OneSignal"
                 }
             ]
         },
@@ -21,42 +38,42 @@
             "description": "Senior Mobile Engineer",
             "tasks": [
                 {
-                    "name" : "Senior Flutter Engineer",
-                    "description": "Creating a clean-architecture modularized health insurance hybrid application from scratch, developed and maintained using Flutter, consistently prioritizing comprehensive code coverage through unitary and widget tests.\n\n» Flutter (dart) ~ Working with: Clean Architecture, Melos, Cubit, BLoC, freezed, Mocktail, Dio, Widget Test, Firebase, Hive, Equatable"
+                    "name": "Senior Flutter Engineer",
+                    "description": "- Creation of a hybrid health insurance application (Android and iOS), IMQ, modularized from scratch, developed and maintained using the Flutter SDK.\n- Supervision and leadership tasks within the team, especially for junior members.\n- Use and management of Copilot for test generation and code refactoring.\n- Publishing, updating, and uploading versions on Google Play Console and App Store TestFlight.\n\n» Flutter (dart) ~ Working with: Clean Architecture, Melos, Cubit, BLoC, freezed, Mocktail, Dio, Widget Test, Firebase, Hive, Equatable"
                 },
                 {
-                    "name" : "Senior Android Engineer",
-                    "description": "Being part of a large multicultural team, in charge of re-skinning a modularized banking app using a low-code proprietary remote app configuration, making the app fully customizable and modifiable directly from a back-office.\n\n» Android (kotlin) ~ Working with: MVVM, Jetpack, Koin, Koin-test, Retrofit2, AndroidX, LiveData, Firebase, Room, Glide, Mockito, Robolectric"
+                    "name": "Senior Android Engineer",
+                    "description": "- Part of a large multicultural and international team, responsible for the visual redesign (“re-skinning”) of a modularized banking application, fully customizable from a back-office.\n- Participation in code reviews promoting best practices, SOLID principles, and MVVM architecture.\n- Use and management of version control with Git and GitLab, following the GitFlow methodology.\n\n» Android (kotlin) ~ Working with: MVVM, Jetpack, Koin, Koin-test, Retrofit2, AndroidX, LiveData, Firebase, Room, Glide, Mockito, Robolectric"
                 }
             ]
         },
         {
             "clientName": "Cuatroochenta",
-            "icon":"assets/images/experience/cuatroochenta.jpeg",
+            "icon": "assets/images/experience/cuatroochenta.jpeg",
             "date": "May 2020 - May 2022",
             "location": "Valencia (Spain) | Hybrid",
             "description": "Mobile Engineer",
             "tasks": [
                 {
-                    "name" : "Flutter Engineer",
-                    "description": "» Flutter (dart) ~ Worked with: Clean Architecture, BLoC, GetIt, Dartz, RxDart, Equatable, TDD, Mockito"
+                    "name": "Flutter Engineer",
+                    "description": "- Development from scratch and maintenance of hybrid applications using the Flutter framework, such as: Druni, Visual Sensor, Skiana, ...\n\n» Flutter (dart) ~ Worked with: Clean Architecture, BLoC, GetIt, Dartz, RxDart, Equatable, TDD, Mockito"
                 },
                 {
-                    "name" : "Android Engineer",
-                    "description": "» Android (kotlin) ~ Worked with: Jetpack, MVVM, Coroutines, LiveData, AndroidX, Retrofit, Room"
+                    "name": "Android Engineer",
+                    "description": "- Development and maintenance of native Android applications, such as: Hoffmann, Poster XXL, CashPatri, ...\n\n» Android (kotlin) ~ Worked with: Jetpack, MVVM, Coroutines, LiveData, AndroidX, Retrofit, Room"
                 }
             ]
         },
         {
             "clientName": "Sportmaniacs",
-            "icon":"assets/images/experience/sportmaniacs.jpeg",
+            "icon": "assets/images/experience/sportmaniacs.jpeg",
             "date": "Jan 2016 - Sep 2016",
             "location": "Valencia (Spain) | On-site",
             "description": "Android Engineer",
             "tasks": [
                 {
-                    "name" : "Android Engineer",
-                    "description": "» Android (java) ~ Worked with: Model View Presenter, ButterKnife, Retrofit, RxJava, Mockito, Expresso, UnitTesting"
+                    "name": "Android Engineer",
+                    "description": "- Development of native Android mobile applications using Java in the Fitness and e-commerce domains, such as: Sportmaniacs and TimingSense.\n- Implementation of native Android libraries for communication via Bluetooth and RFID.\n- Implementation of Google Maps libraries, Firebase integration, and Garmin API handling.\n\n» Android (java) ~ Worked with: Model View Presenter, ButterKnife, Retrofit, RxJava, Mockito, Expresso, UnitTesting"
                 }
             ]
         }
