@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                   padding: WidgetStatePropertyAll(EdgeInsets.all(18)),
                 ),
               ),
-              cardTheme: CardTheme(
+              cardTheme: CardThemeData(
                 color: cardColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 margin: const EdgeInsets.all(12),
               ),
-              tabBarTheme: TabBarTheme(
+              tabBarTheme: TabBarThemeData(
                 indicatorSize: TabBarIndicatorSize.label,
                 labelColor: primary,
                 unselectedLabelColor: isDarkMode
