@@ -136,31 +136,34 @@ class ProjectItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Links:',
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      const SizedBox(width: 5),
-                      if (projectData.appStoreLink != null)
-                        LinkWidget(
-                          type: ProjectLinkType.appstore,
-                          link: projectData.appStoreLink!,
+                  if (projectData.appStoreLink != null ||
+                      projectData.playStoreLink != null ||
+                      projectData.webLink != null)
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Links:',
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
-                      if (projectData.playStoreLink != null)
-                        LinkWidget(
-                          type: ProjectLinkType.playstore,
-                          link: projectData.playStoreLink!,
-                        ),
-                      if (projectData.webLink != null)
-                        LinkWidget(
-                          type: ProjectLinkType.web,
-                          link: projectData.webLink!,
-                        )
-                    ],
-                  ),
+                        const SizedBox(width: 5),
+                        if (projectData.appStoreLink != null)
+                          LinkWidget(
+                            type: ProjectLinkType.appstore,
+                            link: projectData.appStoreLink!,
+                          ),
+                        if (projectData.playStoreLink != null)
+                          LinkWidget(
+                            type: ProjectLinkType.playstore,
+                            link: projectData.playStoreLink!,
+                          ),
+                        if (projectData.webLink != null)
+                          LinkWidget(
+                            type: ProjectLinkType.web,
+                            link: projectData.webLink!,
+                          )
+                      ],
+                    ),
                 ],
               ),
             ),
