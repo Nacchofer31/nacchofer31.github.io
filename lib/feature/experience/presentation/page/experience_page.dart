@@ -55,6 +55,7 @@ class _ExperiencePageState extends State<ExperiencePage>
                     ),
                     child: ListView.builder(
                       shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: experienceList.length,
                       itemBuilder: (context, index) {
                         final item = experienceList[index];

@@ -53,6 +53,7 @@ class _ProjectsPageState extends State<ProjectsPage>
                             : Responsive.maxMainSpacing(context) * 1.333),
                     child: ListView.builder(
                       shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: projectList.length,
                       itemBuilder: (context, index) {
                         final item = projectList[index];

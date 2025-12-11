@@ -53,6 +53,7 @@ class _EducationPageState extends State<EducationPage>
                             : Responsive.maxMainSpacing(context) * 1.333),
                     child: ListView.builder(
                       shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: educationList.length,
                       itemBuilder: (context, index) {
                         final item = educationList[index];
