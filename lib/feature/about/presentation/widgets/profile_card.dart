@@ -49,35 +49,12 @@ class ProfileCard extends StatelessWidget {
                   style: Responsive.mainHeadline(context),
                 ),
                 SizedBox(height: Responsive.maxSmallSpacing(context)),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      profileModel.role,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            height: 1.8,
-                            color: bodyTextColor(context),
-                          ),
-                    ),
-                    const SizedBox(width: 8),
-                    !Responsive.isVerySmall(context)
-                        ? const SizedBox.shrink()
-                        : AnimatedContainer(
-                            duration: const Duration(milliseconds: 350),
-                            width: 24,
-                            height: 24,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              image: DecorationImage(
-                                image: Image.network(
-                                  profileModel.avatarPath,
-                                  width: 24,
-                                  height: 24,
-                                ).image,
-                              ),
-                            ),
-                          ),
-                  ],
+                Text(
+                  profileModel.role,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        height: 1.8,
+                        color: bodyTextColor(context),
+                      ),
                 ),
               ],
             ),

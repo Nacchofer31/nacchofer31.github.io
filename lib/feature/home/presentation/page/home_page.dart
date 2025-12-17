@@ -34,64 +34,77 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     final themeController = Provider.of<ThemeController>(context);
+
     return BlocProvider<HomeCubit>(
       create: (context) => GetIt.instance.get<HomeCubit>(),
       child: StreamBuilder(
         stream: themeController.state,
-        builder: (context, snapshot) => SelectionArea(
-          child: Scaffold(
-            body: Stack(
-              children: [
-                Center(
-                  child: Container(
-                    padding: EdgeInsets.all(Responsive.maxLargeSpacing(context))
-                        .copyWith(bottom: 0),
-                    width: Responsive.maxContainerWidth(context, 1400),
-                    height: double.infinity,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        TopNavigationBar(tabController: tabController),
-                        Expanded(
-                          child: TabBarView(
-                            physics: const NeverScrollableScrollPhysics(),
-                            controller: tabController,
-                            children: const [
-                              AboutPage(),
-                              ExperiencePage(),
-                              EducationPage(),
-                              ProjectsPage(),
-                            ],
-                          ),
+        builder: (context, snapshot) {
+          final skillAssets = context.select<HomeCubit, List<String>>(
+            (cubit) => cubit.state.homeModel.skillList
+                .map((skill) => skill.techLogoPath)
+                .toList(),
+          );
+          return SelectionArea(
+            child: Scaffold(
+              body: ThemedPatternBackground(
+                skillAssets: skillAssets,
+                child: Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                        padding:
+                            EdgeInsets.all(Responsive.maxLargeSpacing(context))
+                                .copyWith(bottom: 0),
+                        width: Responsive.maxContainerWidth(context, 1400),
+                        height: double.infinity,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            TopNavigationBar(tabController: tabController),
+                            Expanded(
+                              child: TabBarView(
+                                physics: const NeverScrollableScrollPhysics(),
+                                controller: tabController,
+                                children: const [
+                                  AboutPage(),
+                                  ExperiencePage(),
+                                  EducationPage(),
+                                  ProjectsPage(),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          onPressed: () => themeController.toogle(),
-                          icon: Icon(
-                            themeController.isDarkMode
-                                ? Icons.dark_mode
-                                : Icons.light_mode,
-                          ),
+                    Padding(
+                      padding:
+                          EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              onPressed: () => themeController.toogle(),
+                              icon: Icon(
+                                themeController.isDarkMode
+                                    ? Icons.dark_mode
+                                    : Icons.light_mode,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

@@ -1,0 +1,17 @@
+# CHANGELOG
+
+## 1.0.0
+
+- init: first release.
+
+## 1.0.1
+
+- fix: removed mouse drag behaviour.
+
+## 1.0.2
+
+- fix: added missing mouse drag behaviour in project item screenshots.
+
+## 1.0.3
+
+- feature: added animations and themed dynamic background.
