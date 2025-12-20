@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
-import 'package:nacchofer31_portfolio/utils/slide_in_from_left.dart';
 
 class ProjectsPage extends StatefulWidget {
   const ProjectsPage({super.key});
@@ -57,9 +55,7 @@ class _ProjectsPageState extends State<ProjectsPage>
                       itemCount: projectList.length,
                       itemBuilder: (context, index) {
                         final item = projectList[index];
-                        return SlideInFromLeft(
-                            delay:
-                                Duration(milliseconds: (300 * index).toInt()),
+                        return ScrollAppearanceTransition(
                             child: ProjectItem(projectData: item));
                       },
                     ),

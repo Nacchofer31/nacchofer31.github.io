@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
-import 'package:nacchofer31_portfolio/utils/slide_in_from_left.dart';
 
 class EducationPage extends StatefulWidget {
   const EducationPage({super.key});
@@ -57,7 +55,7 @@ class _EducationPageState extends State<EducationPage>
                       itemCount: educationList.length,
                       itemBuilder: (context, index) {
                         final item = educationList[index];
-                        return SlideInFromLeft(
+                        return ScrollAppearanceTransition(
                             delay:
                                 Duration(milliseconds: (300 * index).toInt()),
                             child: EducationItem(educationData: item));

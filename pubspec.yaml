@@ -1,7 +1,7 @@
 name: nacchofer31_portfolio
 description: "My dev portfolio website. Built with flutter web."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.3+20251217
+version: 1.1.9+20251220
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -20,6 +20,8 @@ dependencies:
   google_fonts: ^6.2.1
   hexcolor: ^3.0.1
   url_launcher: ^6.3.1
+  http: ^1.2.1
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   build_runner: ^2.4.6

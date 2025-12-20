@@ -48,3 +48,6 @@ app.*.map.json
 *.freezed.dart
 *.g.dart
 /lib/gen/
+
+# Environment variables
+.env.**

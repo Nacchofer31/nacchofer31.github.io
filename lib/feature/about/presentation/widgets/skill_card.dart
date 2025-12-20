@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
-class SkillsCard extends StatelessWidget {
-  const SkillsCard({super.key});
+class SkillCard extends StatelessWidget {
+  const SkillCard({super.key});
 
   @override
   Widget build(BuildContext context) {

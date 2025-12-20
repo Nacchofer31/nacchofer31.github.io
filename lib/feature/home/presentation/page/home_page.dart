@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _HomePageState extends State<HomePage>
   late TabController tabController;
 
   int get routeIndex {
-    return widget.index.clamp(0, 3);
+    return widget.index.clamp(0, 4);
   }
 
   @override
@@ -35,76 +34,94 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     final themeController = Provider.of<ThemeController>(context);
 
-    return BlocProvider<HomeCubit>(
-      create: (context) => GetIt.instance.get<HomeCubit>(),
-      child: StreamBuilder(
-        stream: themeController.state,
-        builder: (context, snapshot) {
-          final skillAssets = context.select<HomeCubit, List<String>>(
-            (cubit) => cubit.state.homeModel.skillList
-                .map((skill) => skill.techLogoPath)
-                .toList(),
-          );
-          return SelectionArea(
-            child: Scaffold(
-              body: ThemedPatternBackground(
-                skillAssets: skillAssets,
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Container(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<HomeCubit>(
+          create: (context) => GetIt.instance.get<HomeCubit>(),
+        ),
+        BlocProvider<MailCubit>(
+          create: (context) => GetIt.instance.get<MailCubit>(),
+        ),
+      ],
+      child: BlocListener<HomeCubit, HomeState>(
+        listenWhen: (previous, current) =>
+            previous.selectedPage != current.selectedPage,
+        listener: (context, state) {
+          final index = state.selectedPage.index;
+          if (tabController.index != index) {
+            tabController.animateTo(index);
+          }
+        },
+        child: StreamBuilder(
+          stream: themeController.state,
+          builder: (context, snapshot) {
+            final skillAssets = context.select<HomeCubit, List<String>>(
+              (cubit) => cubit.state.homeModel.skillList
+                  .map((skill) => skill.techLogoPath)
+                  .toList(),
+            );
+            return SelectionArea(
+              child: Scaffold(
+                body: ThemedPatternBackground(
+                  skillAssets: skillAssets,
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Container(
+                          padding: EdgeInsets.all(
+                                  Responsive.maxLargeSpacing(context))
+                              .copyWith(bottom: 0),
+                          width: Responsive.maxContainerWidth(context, 1400),
+                          height: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              TopNavigationBar(tabController: tabController),
+                              Expanded(
+                                child: TabBarView(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  controller: tabController,
+                                  children: const [
+                                    AboutPage(),
+                                    ExperiencePage(),
+                                    EducationPage(),
+                                    ProjectsPage(),
+                                    ContactPage(),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
                         padding:
-                            EdgeInsets.all(Responsive.maxLargeSpacing(context))
-                                .copyWith(bottom: 0),
-                        width: Responsive.maxContainerWidth(context, 1400),
-                        height: double.infinity,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            TopNavigationBar(tabController: tabController),
-                            Expanded(
-                              child: TabBarView(
-                                physics: const NeverScrollableScrollPhysics(),
-                                controller: tabController,
-                                children: const [
-                                  AboutPage(),
-                                  ExperiencePage(),
-                                  EducationPage(),
-                                  ProjectsPage(),
-                                ],
+                            EdgeInsets.all(Responsive.maxLargeSpacing(context)),
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () => themeController.toogle(),
+                                icon: Icon(
+                                  themeController.isDarkMode
+                                      ? Icons.dark_mode
+                                      : Icons.light_mode,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                              onPressed: () => themeController.toogle(),
-                              icon: Icon(
-                                themeController.isDarkMode
-                                    ? Icons.dark_mode
-                                    : Icons.light_mode,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
-import 'package:nacchofer31_portfolio/utils/slide_in_from_left.dart';
 
 class ExperiencePage extends StatefulWidget {
   const ExperiencePage({super.key});
@@ -59,9 +57,7 @@ class _ExperiencePageState extends State<ExperiencePage>
                       itemCount: experienceList.length,
                       itemBuilder: (context, index) {
                         final item = experienceList[index];
-                        return SlideInFromLeft(
-                            delay:
-                                Duration(milliseconds: (300 * index).toInt()),
+                        return ScrollAppearanceTransition(
                             child: ExperienceItem(experienceData: item));
                       },
                     ),

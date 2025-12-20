@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class ExperienceItem extends StatelessWidget {
