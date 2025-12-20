@@ -20,9 +20,15 @@
         },
         {
             "name": "Software Development",
-            "description": "Clean Code, Design Patterns, GIT, CLI, Agile Methodology, SCRUM, Pair-programming, DevOps Lifecycles, Cursor, Ollama, Qwen, Deepseek, ChatGPT, Copilot",
+            "description": "Clean Code, SOLID, Design Patterns, GIT, CLI, Agile, SCRUM, Pair-programming, DevOps Lifecycles, Test-Driven Development, Unit & Integration Testing",
             "techLogoPath": "assets/images/skills/code.svg",
             "iconColor": "#FF6D00"
+        },
+        {
+            "name": "GenAI",
+            "description": "Cursor, Copilot, Gemini, Ollama, LLMs, Qwen, Deepseek, ChatGPT, Claude, Anthropic, AWS Bedrock, Amazon Q",
+            "techLogoPath": "assets/images/skills/gen-ai.svg",
+            "iconColor": "#6366F1"
         },
         {
             "name": "Languages",
