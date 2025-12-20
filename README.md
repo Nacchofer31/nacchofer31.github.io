@@ -39,12 +39,6 @@ This setup allows for easy customization of the portfolio by simply modifying or
 
 ---
 
-## 🚧 Status
-
-This project is a **Work in Progress (WIP)** — constantly improving and evolving.
-
----
-
 ## 🛠️ Setup (for development)
 
 ```bash

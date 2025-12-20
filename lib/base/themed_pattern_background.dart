@@ -17,9 +17,9 @@ class ThemedPatternBackground extends StatefulWidget {
     super.key,
     required this.skillAssets,
     this.child,
-    this.iconSize = 35.0,
-    this.iconSpacing = 100.0,
-    this.opacity = 0.1,
+    this.iconSize = 35,
+    this.iconSpacing = 100,
+    this.opacity = .15,
     this.animationDuration = const Duration(seconds: 30),
   });
 
@@ -49,7 +49,7 @@ class _ThemedPatternBackgroundState extends State<ThemedPatternBackground>
       curve: Curves.linear,
     ));
 
-    _controller.repeat();
+    _controller.repeat(reverse: true);
   }
 
   @override
@@ -113,7 +113,6 @@ class _ThemedPatternBackgroundState extends State<ThemedPatternBackground>
         final stableIndex =
             ((row % 10) + 10) % 10 * 10 + ((col % 10) + 10) % 10;
 
-        // Use prime numbers to create better distribution
         final svgSeed = (row * 7 + col * 13) % 100;
         final svgIndex = svgSeed % widget.skillAssets.length;
         final svgPath = widget.skillAssets[svgIndex];

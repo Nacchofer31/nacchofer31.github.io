@@ -1,9 +1,11 @@
 library portfolio;
 
+export 'package:flutter/material.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:flutter_web_plugins/flutter_web_plugins.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:get_it/get_it.dart';
+export 'package:nacchofer31_portfolio/utils/scroll_appearance_transition.dart';
 
 export 'app.dart';
 export 'base/base.dart';

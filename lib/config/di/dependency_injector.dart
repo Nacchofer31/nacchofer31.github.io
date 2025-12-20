@@ -19,6 +19,10 @@ final class DependencyInjector {
       () => ProjectsRepositoryImpl(dataSource: dataSource),
     );
 
+    getIt.registerLazySingleton<EmailService>(
+      () => EmailJsServiceImpl(),
+    );
+
     //CUBITS
     getIt.registerFactory<HomeCubit>(
       () => HomeCubit(
@@ -28,6 +32,12 @@ final class DependencyInjector {
           educationRepository: getIt.get<EducationRepository>(),
           projectsRepository: getIt.get<ProjectsRepository>(),
         ),
+      ),
+    );
+
+    getIt.registerFactory<MailCubit>(
+      () => MailCubit(
+        emailService: getIt.get<EmailService>(),
       ),
     );
   }

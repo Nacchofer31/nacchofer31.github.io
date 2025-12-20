@@ -15,3 +15,9 @@
 ## 1.0.3
 
 - feature: added animations and themed dynamic background.
+
+## 1.0.4
+
+- feature: added Contact me, emailjs service.
+- feature: added GenAI section.
+- fix: updated element animations.

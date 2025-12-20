@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 extension on Routes {
@@ -7,6 +6,7 @@ extension on Routes {
     Routes.education: 'Education',
     Routes.experience: 'Experience',
     Routes.projects: 'Projects',
+    Routes.contact: 'Contact me',
   };
 
   String get name => routeNamesMap[this] ?? '';

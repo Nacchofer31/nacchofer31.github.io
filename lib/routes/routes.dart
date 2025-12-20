@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 enum Routes {
   about('/about'),
   experience('/experience'),
   education('/education'),
-  projects('/projects');
+  projects('/projects'),
+  contact('/contact');
 
   final String path;
 

@@ -30,7 +30,11 @@ jobs:
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Build Flutter Web
-        run: flutter build web --release --verbose
+        run: |
+          flutter build web --release --verbose \
+            --dart-define=EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }} \
+            --dart-define=EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }} \
+            --dart-define=EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}
 
       - name: Copy Build Files to Docs
         run: |
