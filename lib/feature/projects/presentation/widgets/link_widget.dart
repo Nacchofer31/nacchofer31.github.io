@@ -1,18 +1,16 @@
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 enum ProjectLinkType {
   appstore,
   playstore,
-  web,
+  website,
 }
 
 extension on ProjectLinkType {
   static final linkIconMap = {
     ProjectLinkType.appstore: 'assets/images/appstore.svg',
     ProjectLinkType.playstore: 'assets/images/playstore.svg',
-    ProjectLinkType.web: 'assets/images/web.svg',
+    ProjectLinkType.website: 'assets/images/web.svg',
   };
 
   String get icon => linkIconMap[this] ?? '';
@@ -30,16 +28,12 @@ class LinkWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: InkWell(
-        onTap: () => launchUrl(Uri.parse(link)),
-        child: SvgPicture.asset(
-          height: 30,
-          type.icon,
-          colorFilter: ColorFilter.mode(accentColor, BlendMode.srcIn),
-        ),
-      ),
+    return SocialIconButton(
+      iconPath: type.icon,
+      url: link,
+      tooltip: type.name.toUpperCase(),
+      size: 24,
+      padding: 8,
     );
   }
 }

@@ -23,9 +23,9 @@ class ContactBulletSection extends StatelessWidget {
               text:
                   'Hybrid Flutter software development projects and opportunities'),
           const PortfolioBulletPoint(
-              text: 'DevOps projects & GenAI projects and opportunities'),
+              text: 'DevOps & GenAI projects and opportunities'),
           const PortfolioBulletPoint(
-              text: 'Collaborative research and innovation'),
+              text: 'Collaborative research, open source projects and innovation'),
         ],
       );
 }

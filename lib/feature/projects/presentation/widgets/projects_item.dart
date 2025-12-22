@@ -11,6 +11,10 @@ class ProjectItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final isVerySmall = Responsive.isVerySmall(context);
     return Card(
+      color: Theme.of(context).brightness == Brightness.dark
+          ? const Color(0xff252526)
+          : const Color.fromARGB(255, 240, 240, 240),
+      elevation: Theme.of(context).brightness == Brightness.dark ? 4 : 2,
       child: Container(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -92,7 +96,9 @@ class ProjectItem extends StatelessWidget {
                     children: [
                       Text(
                         'Built with:',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                       const SizedBox(width: 5),
                       SkillIcon(
@@ -143,9 +149,12 @@ class ProjectItem extends StatelessWidget {
                       children: [
                         Text(
                           'Links:',
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
-                        const SizedBox(width: 5),
+                        const SizedBox(width: 12),
                         if (projectData.appStoreLink != null)
                           LinkWidget(
                             type: ProjectLinkType.appstore,
@@ -158,7 +167,7 @@ class ProjectItem extends StatelessWidget {
                           ),
                         if (projectData.webLink != null)
                           LinkWidget(
-                            type: ProjectLinkType.web,
+                            type: ProjectLinkType.website,
                             link: projectData.webLink!,
                           )
                       ],

@@ -2,13 +2,13 @@
     "skills": [
         {
             "name": "Android Development",
-            "description": "Kotlin, MMVM, Clean Arch, Jetpack, Compose, KMP, LiveData, Koin, RxJava, Livedata, Flows, Room, Retrofit2, Koin-test, Roboelectric, Mockito, Spotless, Jacoco",
+            "description": "Kotlin, MMVM, Clean Arch, Jetpack, Compose, KMP, CMP, LiveData, Koin, RxJava, Livedata, Flows, Room, Retrofit2, Koin-test, Roboelectric, Mockito, Spotless, Jacoco",
             "techLogoPath": "assets/images/skills/android.svg",
             "iconColor": "#3DDC84"
         },
         {
             "name": "Flutter Development",
-            "description": "Dart, MVVM, Clean Arch, BLoC, Cubit, freezed, GetIt, RxDart, Provider, Riverpod, Flutter Hooks, Hive, Sqflite, graphql_flutter, Mocktail, Dio, Melos, flutter_localizations",
+            "description": "Dart, MVVM, Clean Arch, BLoC, Cubit, freezed, GetIt, RxDart, Provider, Riverpod, Flutter Hooks, Method Channels, Hive, Sqflite, graphql_flutter, Mocktail, Dio, Melos, flutter_localizations",
             "techLogoPath": "assets/images/skills/flutter.svg",
             "iconColor": "#02569B"
         },

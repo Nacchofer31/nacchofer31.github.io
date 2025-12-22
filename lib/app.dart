@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
             final isDarkMode = themeController.isDarkMode;
             const primary = Colors.blue;
             final cardColor =
-                isDarkMode ? const Color(0xff1E1E1F) : Colors.grey.shade200;
+                isDarkMode ? const Color(0xff1E1E1F) : Colors.white;
 
             final baseTheme = ThemeData(
               primarySwatch: Colors.blue,
@@ -38,14 +38,16 @@ class MyApp extends StatelessWidget {
               ),
               cardTheme: CardThemeData(
                 color: cardColor,
+                elevation: 0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
                   side: BorderSide(
-                      width: 1,
-                      color: const Color(0xff383838)
-                          .withValues(alpha: isDarkMode ? 1 : 0.3)),
+                    width: 1,
+                    color: isDarkMode
+                        ? const Color(0xff383838)
+                        : Colors.grey.withValues(alpha: 0.2),
+                  ),
                 ),
-                elevation: 0,
                 margin: const EdgeInsets.all(12),
               ),
               tabBarTheme: TabBarThemeData(
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
             );
 
             return MaterialApp(
-              title: 'Ignacio Ferrer | Mobile Engineer',
+              title: 'Ignacio Ferrer Sanz | Mobile Engineer',
               home: const HomePage(),
               theme: baseTheme.copyWith(
                 textTheme: GoogleFonts.poppinsTextTheme(

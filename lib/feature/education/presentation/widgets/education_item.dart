@@ -9,6 +9,10 @@ class EducationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final isVerySmall = Responsive.isVerySmall(context);
     return Card(
+      color: Theme.of(context).brightness == Brightness.dark
+          ? const Color(0xff252526)
+          : const Color.fromARGB(255, 240, 240, 240),
+      elevation: Theme.of(context).brightness == Brightness.dark ? 4 : 2,
       child: Container(
         padding: const EdgeInsets.all(12),
         child: Column(

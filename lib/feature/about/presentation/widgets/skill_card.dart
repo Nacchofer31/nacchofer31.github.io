@@ -9,6 +9,14 @@ class SkillCard extends StatelessWidget {
       (cubit) => cubit.state.homeModel.skillList,
     );
     return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: cardBorderColor(context),
+          width: 1,
+        ),
+      ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         width: double.infinity,
@@ -26,8 +34,18 @@ class SkillCard extends StatelessWidget {
             SizedBox(height: Responsive.maxSmallSpacing(context)),
             Column(
               children: skills
-                  .map((e) => _SkillItem(
-                        skillData: e,
+                  .map((e) => Card(
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? const Color(0xff252526)
+                            : const Color.fromARGB(255, 240, 240, 240),
+                        elevation:
+                            Theme.of(context).brightness == Brightness.dark
+                                ? 4
+                                : 2,
+                        margin: const EdgeInsets.symmetric(vertical: 8),
+                        child: _SkillItem(
+                          skillData: e,
+                        ),
                       ))
                   .toList(),
             ),
@@ -47,7 +65,7 @@ class _SkillItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(vertical: 24),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

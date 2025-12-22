@@ -37,6 +37,13 @@ class _ContactMeFormFormState extends State<ContactMeForm> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: cardBorderColor(context),
+          width: 1,
+        ),
+      ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         width: double.infinity,
@@ -46,7 +53,14 @@ class _ContactMeFormFormState extends State<ContactMeForm> {
             state.maybeWhen(
               success: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Email sent successfully!')),
+                  const SnackBar(
+                    content: Text(
+                      'Email sent successfully!',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    backgroundColor: Colors.green,
+                  ),
                 );
                 _titleController.clear();
                 _nameController.clear();
@@ -56,7 +70,14 @@ class _ContactMeFormFormState extends State<ContactMeForm> {
               },
               error: (message) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Error: $message')),
+                  const SnackBar(
+                    content: Text(
+                      'Email sent successfully!',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    backgroundColor: Colors.red,
+                  ),
                 );
               },
               orElse: () {},
@@ -136,13 +157,20 @@ class _ContactMeFormFormState extends State<ContactMeForm> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: accentColor,
                         foregroundColor: Colors.white,
+                        elevation: 4,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
                       child: isLoading
                           ? const CircularProgressIndicator(color: Colors.white)
-                          : const Text('Send Message'),
+                          : const Text(
+                              'Send Message',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
                     ),
                   ),
                 ],

@@ -10,7 +10,7 @@ class FooterView extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 24.0),
             child: Text(
-              'Powered by ☕ using Flutter\n© 2025 Ignacio Ferrer',
+              'Powered by ☕ using Flutter\n© 2025 Ignacio Ferrer Sanz',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
