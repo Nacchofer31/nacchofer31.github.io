@@ -16,8 +16,13 @@
 
 - feature: added animations and themed dynamic background.
 
-## 1.0.4
+## 1.1.0
 
 - feature: added Contact me, emailjs service.
 - feature: added GenAI section.
 - fix: updated element animations.
+
+## 1.2.0
+
+- feature: added new drawer menu for mobile and smaller devices.
+- fix: updated design.

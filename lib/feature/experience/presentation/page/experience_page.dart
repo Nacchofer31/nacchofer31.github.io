@@ -21,6 +21,13 @@ class _ExperiencePageState extends State<ExperiencePage>
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: cardBorderColor(context),
+                width: 1,
+              ),
+            ),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 350),
               width: double.infinity,

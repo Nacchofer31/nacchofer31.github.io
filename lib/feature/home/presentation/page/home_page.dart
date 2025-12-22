@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   int get routeIndex {
     return widget.index.clamp(0, 4);
@@ -28,6 +29,12 @@ class _HomePageState extends State<HomePage>
       vsync: this,
       initialIndex: routeIndex,
     );
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -55,13 +62,16 @@ class _HomePageState extends State<HomePage>
         child: StreamBuilder(
           stream: themeController.state,
           builder: (context, snapshot) {
-            final skillAssets = context.select<HomeCubit, List<String>>(
-              (cubit) => cubit.state.homeModel.skillList
-                  .map((skill) => skill.techLogoPath)
-                  .toList(),
+            final homeModel = context.select<HomeCubit, HomeModel>(
+              (cubit) => cubit.state.homeModel,
             );
+            final skillAssets =
+                homeModel.skillList.map((skill) => skill.techLogoPath).toList();
+
             return SelectionArea(
               child: Scaffold(
+                key: _scaffoldKey,
+                drawer: const HomeDrawer(),
                 body: ThemedPatternBackground(
                   skillAssets: skillAssets,
                   child: Stack(
@@ -77,7 +87,11 @@ class _HomePageState extends State<HomePage>
                             mainAxisAlignment: MainAxisAlignment.start,
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              TopNavigationBar(tabController: tabController),
+                              TopNavigationBar(
+                                tabController: tabController,
+                                onMenuPressed: () =>
+                                    _scaffoldKey.currentState?.openDrawer(),
+                              ),
                               Expanded(
                                 child: TabBarView(
                                   physics: const NeverScrollableScrollPhysics(),

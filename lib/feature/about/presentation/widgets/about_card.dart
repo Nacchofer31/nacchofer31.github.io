@@ -1,4 +1,3 @@
-import 'package:flutter_svg/svg.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -10,11 +9,19 @@ class AboutCard extends StatelessWidget {
     final aboutModel = context.select<HomeCubit, AboutModel>(
       (cubit) => cubit.state.homeModel.aboutModel,
     );
+
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: cardBorderColor(context),
+          width: 1,
+        ),
+      ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         width: double.infinity,
-        padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.333),
+        padding: EdgeInsets.all(Responsive.maxMainSpacing(context) * 1.5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -25,72 +32,70 @@ class AboutCard extends StatelessWidget {
             ),
             SizedBox(height: Responsive.maxSmallSpacing(context)),
             const AccentWidget(),
-            SizedBox(height: Responsive.maxSmallSpacing(context)),
+            SizedBox(height: Responsive.maxLargeSpacing(context)),
             Text(
               aboutModel.description,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     height: 1.8,
+                    fontSize: 16,
                     color: bodyTextColor(context),
+                    letterSpacing: 0.2,
                   ),
             ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisSize: MainAxisSize.min,
+            const SizedBox(height: 48),
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.spaceBetween,
               children: [
-                Text(
-                  'Social Links:',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(width: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: InkWell(
-                    onTap: () => launchUrl(Uri.parse(
-                        'https://www.linkedin.com/in/ignacio-ferrer-sanz/')),
-                    child: SvgPicture.asset(
-                      height: 25,
-                      width: 25,
-                      'assets/images/linkedin.svg',
-                      colorFilter:
-                          ColorFilter.mode(accentColor, BlendMode.srcIn),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Connect with me:',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
-                  ),
+                    const SizedBox(width: 12),
+                    const SocialIconButton(
+                      iconPath: 'assets/images/linkedin.svg',
+                      url: 'https://www.linkedin.com/in/ignacio-ferrer-sanz/',
+                      tooltip: 'LinkedIn',
+                    ),
+                    const SocialIconButton(
+                      iconPath: 'assets/images/github.svg',
+                      url: 'https://github.com/Nacchofer31',
+                      tooltip: 'GitHub',
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: InkWell(
-                    onTap: () =>
-                        launchUrl(Uri.parse('https://github.com/Nacchofer31')),
-                    child: SvgPicture.asset(
-                      height: 25,
-                      width: 25,
-                      'assets/images/github.svg',
-                      colorFilter:
-                          ColorFilter.mode(accentColor, BlendMode.srcIn),
+                FilledButton.icon(
+                  onPressed: () async => await _launchUrl(
+                      'https://github.com/Nacchofer31/CV/raw/master/CV.pdf'),
+                  style: FilledButton.styleFrom(
+                    backgroundColor: accentColor,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 18,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    elevation: 4,
+                  ),
+                  icon: const Icon(Icons.download, size: 20),
+                  label: const Text(
+                    'Download Resume',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
                   ),
                 ),
               ],
-            ),
-            const SizedBox(height: 5),
-            InkWell(
-              onTap: () async => await _launchUrl(
-                  'https://github.com/Nacchofer31/CV/raw/master/CV.pdf'),
-              child: Padding(
-                padding: const EdgeInsets.all(1),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.download,
-                      color: accentColor,
-                    ),
-                    const Padding(
-                        padding: EdgeInsets.only(left: 3),
-                        child: Text('Download Resume')),
-                  ],
-                ),
-              ),
             ),
           ],
         ),

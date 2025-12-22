@@ -7,6 +7,13 @@ class ContactCTA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: cardBorderColor(context),
+          width: 1,
+        ),
+      ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         width: double.infinity,
@@ -24,29 +31,28 @@ class ContactCTA extends StatelessWidget {
             SizedBox(height: Responsive.maxSmallSpacing(context)),
             const ContactBulletSection(),
             const SizedBox(height: 32),
-            SizedBox(
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () =>
-                    context.read<HomeCubit>().changePage(Routes.contact),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: accentColor,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+            FilledButton.icon(
+              iconAlignment: IconAlignment.end,
+              onPressed: () =>
+                  context.read<HomeCubit>().changePage(Routes.contact),
+              style: FilledButton.styleFrom(
+                backgroundColor: accentColor,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 18,
                 ),
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Contact me',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 8),
-                    Icon(Icons.arrow_forward, size: 18),
-                  ],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                elevation: 4,
+              ),
+              icon: const Icon(Icons.arrow_forward, size: 20),
+              label: const Text(
+                'Contact me',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
                 ),
               ),
             ),

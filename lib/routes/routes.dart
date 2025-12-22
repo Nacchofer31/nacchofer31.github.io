@@ -15,6 +15,28 @@ enum Routes {
       Routes.values.firstWhere((value) => value.path == routeName);
 }
 
+extension RouteExtension on Routes {
+  static final routeNamesMap = {
+    Routes.about: 'About',
+    Routes.education: 'Education',
+    Routes.experience: 'Experience',
+    Routes.projects: 'Projects',
+    Routes.contact: 'Contact me',
+  };
+
+  static final routeIconsMap = {
+    Routes.about: Icons.person_outline,
+    Routes.education: Icons.school_outlined,
+    Routes.experience: Icons.work_outline,
+    Routes.projects: Icons.terminal_outlined,
+    Routes.contact: Icons.email_outlined,
+  };
+
+  String get description => routeNamesMap[this] ?? '';
+  IconData get icon => routeIconsMap[this] ?? Icons.person_outline;
+}
+
+
 Route<dynamic> generateRoute(RouteSettings settings) {
   final int? routeIndex = Routes.fromValue(settings.name ?? '')?.index;
   return PageRouteBuilder(
