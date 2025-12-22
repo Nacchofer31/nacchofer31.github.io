@@ -15,6 +15,21 @@ It showcases my experience, skills, and projects in a clean and interactive inte
 
 ---
 
+## 📸 Screenshots
+
+### 🖥️ Web View
+
+![Dark Mode](screenshots/web-screen-1.png)
+![Light Mode](screenshots/web-screen-2.png)
+
+### 📱 Mobile View
+<p align="center">
+  <img src="screenshots/mobile-screen-1.png" width="49%" />
+  <img src="screenshots/mobile-screen-2.png" width="49%" />
+</p>
+
+---
+
 ## 🧰 Tech Stack
 
 - **Flutter Web** (v3.29+)
