@@ -51,24 +51,29 @@ class _EducationPageState extends State<EducationPage>
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: Responsive.isVerySmall(context)
-                            ? 4
-                            : Responsive.maxMainSpacing(context) * 1.333),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: educationList.length,
-                      itemBuilder: (context, index) {
-                        final item = educationList[index];
-                        return ScrollAppearanceTransition(
-                            delay:
-                                Duration(milliseconds: (300 * index).toInt()),
-                            child: EducationItem(educationData: item));
-                      },
-                    ),
-                  ),
+                  Builder(builder: (context) {
+                    double paddingSize = Responsive.isVerySmall(context)
+                        ? 4
+                        : Responsive.maxMainSpacing(context) * 1.333;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: paddingSize)
+                          .copyWith(
+                        bottom: paddingSize,
+                      ),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: educationList.length,
+                        itemBuilder: (context, index) {
+                          final item = educationList[index];
+                          return ScrollAppearanceTransition(
+                              delay:
+                                  Duration(milliseconds: (300 * index).toInt()),
+                              child: EducationItem(educationData: item));
+                        },
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),

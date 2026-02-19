@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 enum Routes {
@@ -12,7 +13,7 @@ enum Routes {
   const Routes(this.path);
 
   static Routes? fromValue(String routeName) =>
-      Routes.values.firstWhere((value) => value.path == routeName);
+      Routes.values.firstWhereOrNull((value) => value.path == routeName);
 }
 
 extension RouteExtension on Routes {
@@ -36,14 +37,14 @@ extension RouteExtension on Routes {
   IconData get icon => routeIconsMap[this] ?? Icons.person_outline;
 }
 
-
 Route<dynamic> generateRoute(RouteSettings settings) {
-  final int? routeIndex = Routes.fromValue(settings.name ?? '')?.index;
+  final name = settings.name ?? '';
+  final route = name == '/' ? Routes.about : Routes.fromValue(name);
+  final resolvedRoute = route ?? Routes.about;
   return PageRouteBuilder(
+    settings: RouteSettings(name: resolvedRoute.path),
     transitionDuration: Duration.zero,
     reverseTransitionDuration: Duration.zero,
-    pageBuilder: (_, __, ___) => routeIndex != null
-        ? HomePage(index: routeIndex)
-        : const NotFoundRoute(),
+    pageBuilder: (_, __, ___) => HomePage(index: resolvedRoute.index),
   );
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,6 +30,12 @@ class _HomePageState extends State<HomePage>
       vsync: this,
       initialIndex: routeIndex,
     );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final cubit = context.read<HomeCubit>();
+      if (cubit.state.selectedPage.index != routeIndex) {
+        cubit.changePage(Routes.values[routeIndex]);
+      }
+    });
   }
 
   @override
@@ -41,16 +48,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     final themeController = Provider.of<ThemeController>(context);
 
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<HomeCubit>(
-          create: (context) => GetIt.instance.get<HomeCubit>(),
-        ),
-        BlocProvider<MailCubit>(
-          create: (context) => GetIt.instance.get<MailCubit>(),
-        ),
-      ],
-      child: BlocListener<HomeCubit, HomeState>(
+    return BlocListener<HomeCubit, HomeState>(
         listenWhen: (previous, current) =>
             previous.selectedPage != current.selectedPage,
         listener: (context, state) {
@@ -58,6 +56,10 @@ class _HomePageState extends State<HomePage>
           if (tabController.index != index) {
             tabController.animateTo(index);
           }
+          SystemNavigator.routeInformationUpdated(
+            uri: Uri.parse(state.selectedPage.path),
+            replace: true,
+          );
         },
         child: StreamBuilder(
           stream: themeController.state,
@@ -136,7 +138,6 @@ class _HomePageState extends State<HomePage>
             );
           },
         ),
-      ),
     );
   }
 }

@@ -51,22 +51,27 @@ class _ProjectsPageState extends State<ProjectsPage>
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: Responsive.isVerySmall(context)
-                            ? 4
-                            : Responsive.maxMainSpacing(context) * 1.333),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: projectList.length,
-                      itemBuilder: (context, index) {
-                        final item = projectList[index];
-                        return ScrollAppearanceTransition(
-                            child: ProjectItem(projectData: item));
-                      },
-                    ),
-                  ),
+                  Builder(builder: (context) {
+                    double paddingSize = Responsive.isVerySmall(context)
+                        ? 4
+                        : Responsive.maxMainSpacing(context) * 1.333;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: paddingSize)
+                          .copyWith(
+                        bottom: paddingSize,
+                      ),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: projectList.length,
+                        itemBuilder: (context, index) {
+                          final item = projectList[index];
+                          return ScrollAppearanceTransition(
+                              child: ProjectItem(projectData: item));
+                        },
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),

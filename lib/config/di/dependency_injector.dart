@@ -24,7 +24,7 @@ final class DependencyInjector {
     );
 
     //CUBITS
-    getIt.registerFactory<HomeCubit>(
+    getIt.registerLazySingleton<HomeCubit>(
       () => HomeCubit(
         getPortfolioDataUseCase: GetPortfolioDataUseCase(
           aboutRepository: getIt.get<AboutRepository>(),
@@ -35,7 +35,7 @@ final class DependencyInjector {
       ),
     );
 
-    getIt.registerFactory<MailCubit>(
+    getIt.registerLazySingleton<MailCubit>(
       () => MailCubit(
         emailService: getIt.get<EmailService>(),
       ),
