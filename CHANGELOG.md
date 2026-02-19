@@ -26,3 +26,7 @@
 
 - feature: added new drawer menu for mobile and smaller devices.
 - fix: updated design.
+
+## 1.3.0
+
+- feature: added routing to pages.
