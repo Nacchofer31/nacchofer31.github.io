@@ -59,20 +59,30 @@ class MyApp extends StatelessWidget {
               ),
             );
 
-            return MaterialApp(
-              title: 'Ignacio Ferrer Sanz | Mobile Engineer',
-              home: const HomePage(),
-              theme: baseTheme.copyWith(
-                textTheme: GoogleFonts.poppinsTextTheme(
-                  baseTheme.textTheme,
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider<HomeCubit>(
+                  create: (_) => GetIt.instance.get<HomeCubit>(),
                 ),
-              ),
-              debugShowCheckedModeBanner: false,
-              scrollBehavior: CustomScrollBehavior(),
-              onGenerateRoute: generateRoute,
-              initialRoute: Routes.about.path,
-              onUnknownRoute: (_) => MaterialPageRoute(
-                builder: (_) => const HomePage(),
+                BlocProvider<MailCubit>(
+                  create: (_) => GetIt.instance.get<MailCubit>(),
+                ),
+              ],
+              child: MaterialApp(
+                title: 'Ignacio Ferrer Sanz | Mobile Engineer',
+                theme: baseTheme.copyWith(
+                  textTheme: GoogleFonts.poppinsTextTheme(
+                    baseTheme.textTheme,
+                  ),
+                ),
+                debugShowCheckedModeBanner: false,
+                scrollBehavior: CustomScrollBehavior(),
+                onGenerateRoute: generateRoute,
+                initialRoute: Routes.about.path,
+                onUnknownRoute: (_) => MaterialPageRoute(
+                  settings: const RouteSettings(name: '/about'),
+                  builder: (_) => const HomePage(),
+                ),
               ),
             );
           },
