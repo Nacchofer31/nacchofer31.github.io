@@ -1,3 +1,4 @@
+import 'package:hexcolor/hexcolor.dart';
 import 'package:nacchofer31_portfolio/portfolio.dart';
 
 class SkillCard extends StatelessWidget {
@@ -31,23 +32,25 @@ class SkillCard extends StatelessWidget {
             ),
             SizedBox(height: Responsive.maxSmallSpacing(context)),
             const AccentWidget(),
-            SizedBox(height: Responsive.maxSmallSpacing(context)),
-            Column(
-              children: skills
-                  .map((e) => Card(
-                        color: Theme.of(context).brightness == Brightness.dark
-                            ? const Color(0xff252526)
-                            : const Color.fromARGB(255, 240, 240, 240),
-                        elevation:
-                            Theme.of(context).brightness == Brightness.dark
-                                ? 4
-                                : 2,
-                        margin: const EdgeInsets.symmetric(vertical: 8),
-                        child: _SkillItem(
-                          skillData: e,
-                        ),
-                      ))
-                  .toList(),
+            SizedBox(height: Responsive.maxLargeSpacing(context)),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                const spacing = 16.0;
+                final isWide = constraints.maxWidth >= 640;
+                final itemWidth = isWide
+                    ? (constraints.maxWidth - spacing) / 2
+                    : constraints.maxWidth;
+                return Wrap(
+                  spacing: spacing,
+                  runSpacing: spacing,
+                  children: skills
+                      .map((skill) => SizedBox(
+                            width: itemWidth,
+                            child: _SkillItem(skillData: skill),
+                          ))
+                      .toList(),
+                );
+              },
             ),
           ],
         ),
@@ -64,37 +67,59 @@ class _SkillItem extends StatelessWidget {
   final SkillModel skillData;
 
   @override
-  Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            SkillIcon(
-              iconPath: skillData.techLogoPath,
-              iconColor: skillData.iconColor,
-            ),
-            SizedBox(width: Responsive.maxSmallSpacing(context)),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    skillData.name,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                  SizedBox(height: Responsive.maxSmallSpacing(context) / 2),
-                  Text(
-                    skillData.description,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                ],
-              ),
-            ),
-          ],
+  Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final techTags = skillData.description
+        .split(RegExp(r'[,|]'))
+        .map((tag) => tag.trim())
+        .where((tag) => tag.isNotEmpty)
+        .toList();
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: isDarkMode
+            ? const Color(0xff252526)
+            : const Color.fromARGB(255, 240, 240, 240),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: cardBorderColor(context),
+          width: 1,
         ),
-      );
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              SkillIcon(
+                iconPath: skillData.techLogoPath,
+                iconColor: skillData.iconColor,
+                size: 48,
+              ),
+              SizedBox(width: Responsive.maxSmallSpacing(context)),
+              Expanded(
+                child: Text(
+                  skillData.name,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: Responsive.maxSmallSpacing(context) * 1.5),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: techTags
+                .map((tag) => PortfolioTag(
+                      label: tag,
+                      color: HexColor(skillData.iconColor),
+                    ))
+                .toList(),
+          ),
+        ],
+      ),
+    );
+  }
 }

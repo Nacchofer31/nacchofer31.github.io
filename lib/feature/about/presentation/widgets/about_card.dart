@@ -10,6 +10,13 @@ class AboutCard extends StatelessWidget {
       (cubit) => cubit.state.homeModel.aboutModel,
     );
 
+    final highlights = aboutModel.description
+        .split('\n')
+        .map((line) => line.trim())
+        .where((line) => line.isNotEmpty)
+        .map((line) => line.startsWith('-') ? line.substring(1).trim() : line)
+        .toList();
+
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -33,16 +40,9 @@ class AboutCard extends StatelessWidget {
             SizedBox(height: Responsive.maxSmallSpacing(context)),
             const AccentWidget(),
             SizedBox(height: Responsive.maxLargeSpacing(context)),
-            Text(
-              aboutModel.description,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    height: 1.8,
-                    fontSize: 16,
-                    color: bodyTextColor(context),
-                    letterSpacing: 0.2,
-                  ),
-            ),
-            const SizedBox(height: 48),
+            ...highlights
+                .map((highlight) => PortfolioBulletPoint(text: highlight)),
+            const SizedBox(height: 32),
             Wrap(
               spacing: 16,
               runSpacing: 16,

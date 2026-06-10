@@ -76,62 +76,38 @@ class _HomePageState extends State<HomePage>
                 drawer: const HomeDrawer(),
                 body: ThemedPatternBackground(
                   skillAssets: skillAssets,
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: Container(
-                          padding: EdgeInsets.all(
-                                  Responsive.maxLargeSpacing(context))
+                  child: Center(
+                    child: Container(
+                      padding:
+                          EdgeInsets.all(Responsive.maxLargeSpacing(context))
                               .copyWith(bottom: 0),
-                          width: Responsive.maxContainerWidth(context, 1400),
-                          height: double.infinity,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              TopNavigationBar(
-                                tabController: tabController,
-                                onMenuPressed: () =>
-                                    _scaffoldKey.currentState?.openDrawer(),
-                              ),
-                              Expanded(
-                                child: TabBarView(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  controller: tabController,
-                                  children: const [
-                                    AboutPage(),
-                                    ExperiencePage(),
-                                    EducationPage(),
-                                    ProjectsPage(),
-                                    ContactPage(),
-                                  ],
-                                ),
-                              ),
-                            ],
+                      width: Responsive.maxContainerWidth(context, 1400),
+                      height: double.infinity,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          TopNavigationBar(
+                            tabController: tabController,
+                            onMenuPressed: () =>
+                                _scaffoldKey.currentState?.openDrawer(),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsets.all(Responsive.maxLargeSpacing(context)),
-                        child: Align(
-                          alignment: Alignment.topRight,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              IconButton(
-                                onPressed: () => themeController.toogle(),
-                                icon: Icon(
-                                  themeController.isDarkMode
-                                      ? Icons.dark_mode
-                                      : Icons.light_mode,
-                                ),
-                              ),
-                            ],
+                          Expanded(
+                            child: TabBarView(
+                              physics: const NeverScrollableScrollPhysics(),
+                              controller: tabController,
+                              children: const [
+                                AboutPage(),
+                                ExperiencePage(),
+                                EducationPage(),
+                                ProjectsPage(),
+                                ContactPage(),
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
