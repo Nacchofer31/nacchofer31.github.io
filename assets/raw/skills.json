@@ -2,13 +2,13 @@
     "skills": [
         {
             "name": "Android Development",
-            "description": "Kotlin, MMVM, Clean Arch, Jetpack, Compose, KMP, CMP, LiveData, Koin, RxJava, Livedata, Flows, Room, Retrofit2, Koin-test, Roboelectric, Mockito, Spotless, Jacoco",
+            "description": "Kotlin, MMVM, Clean Arch, Jetpack, Compose, KMP, CMP, LiveData, Koin, RxJava, Livedata, Flows, Room, App Functions, Retrofit2, Koin-test, Roboelectric, Mockito, Spotless, Jacoco",
             "techLogoPath": "assets/images/skills/android.svg",
             "iconColor": "#3DDC84"
         },
         {
             "name": "Flutter Development",
-            "description": "Dart, MVVM, Clean Arch, BLoC, Cubit, freezed, GetIt, RxDart, Provider, Riverpod, Flutter Hooks, Method Channels, Hive, Sqflite, graphql_flutter, Mocktail, Dio, Melos, flutter_localizations",
+            "description": "Dart, MVVM, Clean Arch, BLoC, Cubit, freezed, GetIt, RxDart, Provider, Riverpod, llama_dart, flutter_mcp, Method Channels, Hive, Sqflite, graphql_flutter, Mocktail, Dio, Melos, flutter_localizations",
             "techLogoPath": "assets/images/skills/flutter.svg",
             "iconColor": "#02569B"
         },
@@ -26,7 +26,7 @@
         },
         {
             "name": "GenAI",
-            "description": "Cursor, Copilot, Gemini, Ollama, LLMs, Qwen, Deepseek, ChatGPT, Claude, Anthropic, AWS Bedrock, Amazon Q",
+            "description": "Agents, MCP, RAG, Prompt Engineering, SDD, Engram, Amazon Bedrock, Vertex AI, Amazon Q, Claude Code, Cursor, Copilot, Ollama",
             "techLogoPath": "assets/images/skills/gen-ai.svg",
             "iconColor": "#6366F1"
         },
