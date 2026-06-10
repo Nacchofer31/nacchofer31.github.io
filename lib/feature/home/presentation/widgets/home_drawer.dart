@@ -24,13 +24,14 @@ class HomeDrawer extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: Routes.values.map((route) {
                         final isSelected = selectedRoute == route;
+                        final domainColor = brandDomainColor(context);
 
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 4),
                           child: ListTile(
                             leading: Icon(
                               route.icon,
-                              color: isSelected ? Colors.white : null,
+                              color: isSelected ? domainColor : null,
                             ),
                             title: Text(
                               route.description,
@@ -38,13 +39,21 @@ class HomeDrawer extends StatelessWidget {
                                 fontWeight: isSelected
                                     ? FontWeight.bold
                                     : FontWeight.normal,
-                                color: isSelected ? Colors.white : null,
+                                color: isSelected ? domainColor : null,
                               ),
                             ),
                             selected: isSelected,
-                            selectedTileColor: accentColor,
+                            selectedTileColor:
+                                domainColor.withValues(alpha: 0.15),
+                            hoverColor: domainColor.withValues(alpha: 0.1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
+                              side: isSelected
+                                  ? BorderSide(
+                                      color:
+                                          domainColor.withValues(alpha: 0.5),
+                                    )
+                                  : BorderSide.none,
                             ),
                             onTap: () {
                               context.read<HomeCubit>().changePage(route);
@@ -65,7 +74,10 @@ class HomeDrawer extends StatelessWidget {
             right: 8,
             child: SafeArea(
               child: IconButton(
-                icon: const Icon(Icons.close),
+                icon: Icon(
+                  Icons.close,
+                  color: brandDomainColor(context),
+                ),
                 onPressed: () => Navigator.pop(context),
               ),
             ),

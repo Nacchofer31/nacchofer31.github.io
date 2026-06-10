@@ -16,6 +16,11 @@ Color cardBorderColor(BuildContext context) {
 
 Color get accentColor => const Color(0xff2f486d);
 
+Color brandDomainColor(BuildContext context) {
+  final isDarkMode = Provider.of<ThemeController>(context).isDarkMode;
+  return isDarkMode ? const Color(0xff8ab4f8) : accentColor;
+}
+
 Color bodyTextColor(BuildContext context) {
   final isDarkMode = Provider.of<ThemeController>(context).isDarkMode;
   return isDarkMode
