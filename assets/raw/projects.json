@@ -5,7 +5,7 @@
             "logo": "assets/images/projects/sgad/sgad.jpg",
             "type": "Company - Capgemini",
             "description": "Development and maintenance of hybrid applications (Android and iOS) for the Secretaria General de Administración Digital (SGAD), such as: Dehú, FACe, Prevención Juego, Garrapata Alert, CNMC Test Velocidad, SoyFP, Ruta-E, ICA, Rapna, Mi Portafirmas, Catastro and IGME... using the Flutter hybrid development framework.",
-            "skills": "Clean Arch, Cubit, BLoC, freezed, Dio, TestFlight, GetIt, Firebase",
+            "skills": "Flutter, Clean Arch, Cubit, BLoC, freezed, Dio, TestFlight, GetIt, Firebase",
             "techLogoPath": "assets/images/skills/flutter.svg",
             "iconColor": "#02569B",
             "screenshots": [
